@@ -6,7 +6,7 @@ import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer className="w-full pb-20 mb-[75px] md:mb-5" id="contact">
       <div className="w-full absolute left-0 bottom-0 min-h-96">
         <img
           src="/footer-grid.svg"
