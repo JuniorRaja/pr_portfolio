@@ -12,6 +12,8 @@ const Footer = () => {
         <Image
           src="/footer-grid.svg"
           alt="gridbg"
+          width={100}
+          height={100}
           className="w-full h-full opacity-50"
         />
       </div>

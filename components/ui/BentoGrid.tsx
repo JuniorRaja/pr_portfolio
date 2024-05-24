@@ -95,6 +95,8 @@ export const BentoGridItem = ({
             <Image
               src={img}
               alt={img}
+              width={150}
+              height={150}
               className={cn(imgClassName, "object-cover object-center ")}
             />
           )}
@@ -108,7 +110,8 @@ export const BentoGridItem = ({
             <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
+              width={220}
+              height={200}
               className="object-cover object-center w-full h-full"
             />
           )}
@@ -182,7 +185,12 @@ export const BentoGridItem = ({
                   copied ? "block" : "block"
                 }`}
               >
-                <Image src="/confetti.gif" alt="confetti" />
+                <Image
+                  src="/confetti.gif"
+                  alt="confetti"
+                  width={400}
+                  height={200}
+                />
                 {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
               </div>
 
