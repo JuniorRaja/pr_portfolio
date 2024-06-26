@@ -1,15 +1,22 @@
 "use client";
 
 // import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navMenuItems } from "@/data";
-import brainwave from "../public/brainwave.svg";
+import PRLogoW from "../public/PRLogoW.png";
 import background from "../public/background.jpg";
 import MenuSvg from "./ui/MenuSvg";
 import Image from "next/image";
 
 const Header = () => {
   //   const pathName = useLocation();
+
+  const [isClient, setIsClient] = useState<boolean>(false);
+  useEffect(() => {
+    // This will be executed only on the client side after mounting
+    setIsClient(true);
+  }, []);
+
   const [openNav, setOpenNav] = useState<boolean>(false);
   const toggleNav = () => {
     if (openNav) {
@@ -18,6 +25,11 @@ const Header = () => {
       setOpenNav(true);
     }
   };
+  const dynamicClasses = isClient
+    ? openNav
+      ? "bg-n-8"
+      : "bg-n-8/90 backdrop-blur-sm"
+    : "bg-n-8/90 backdrop-blur-sm";
 
   const handleClick = () => {
     setOpenNav(false);
@@ -25,25 +37,23 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm 
-    ${openNav ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}
-    `}
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${dynamicClasses}`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <a>
           <img
-            src={brainwave}
-            width={190}
-            height={40}
-            alt="Brainwave"
-            className="block w-[12rem] xl:mr-8"
+            src={PRLogoW.src}
+            width={50}
+            height={50}
+            alt="PRLogoW"
+            className="block w-[2.5rem] xl:mr-8"
             // href="#hero"
           />
         </a>
 
         <nav
           className={`fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex
-        lg:mx-auto lg:bg-transparent ${openNav ? "flex" : "hidden"}`}
+        lg:mx-auto backdrop-blur-sm z-auto ${openNav ? "flex" : "hidden"}`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
             {navMenuItems.map((item) => (
@@ -67,7 +77,7 @@ const Header = () => {
 
           {/* <HamburgerMenu /> */}
           <div className="absolute inset-0 pointer-events-none lg:hidden">
-            <div className="absolute inset-0 opacity-[.03]">
+            {/* <div className="absolute inset-0 opacity-[.03]">
               <Image
                 className="w-full h-full object-cover"
                 src={background}
@@ -75,7 +85,7 @@ const Header = () => {
                 height={953}
                 alt="Background"
               />
-            </div>
+            </div> */}
 
             {/* add these components later
             
@@ -90,7 +100,7 @@ const Header = () => {
           href="#signup"
           className="button hidden mr-8 text-white/50 transition-colors hover:text-white lg:block"
         >
-          New Account
+          {/* Theme Toggle */}
         </a>
 
         <button className="ml-auto lg:hidden px-3" onClick={toggleNav}>

@@ -1,41 +1,29 @@
-export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
-];
-
 export const navMenuItems = [
   {
     id: "0",
-    title: "Features",
+    title: "About PR",
     url: "#features",
   },
   {
     id: "1",
-    title: "How to use",
+    title: "Gallery",
     url: "#how-to-use",
   },
   {
     id: "2",
-    title: "Roadmap",
+    title: "Skills",
     url: "#roadmap",
   },
   {
     id: "3",
-    title: "Pricing",
+    title: "Interests",
     url: "#pricing",
   },
   {
     id: "4",
-    title: "New account",
-    url: "#signup",
-    onlyMobile: true,
-  },
-  {
-    id: "5",
-    title: "Sign in",
-    url: "#login",
-    onlyMobile: true,
+    title: "Contact",
+    url: "#pricing",
+    onlyMobile: false,
   },
 ];
 
