@@ -1,7 +1,7 @@
 "use client";
 
 // import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { navMenuItems } from "@/data";
 import PRLogoW from "../public/PRLogoW.png";
 import background from "../public/background.jpg";
@@ -11,12 +11,6 @@ import Image from "next/image";
 const Header = () => {
   //   const pathName = useLocation();
 
-  const [isClient, setIsClient] = useState<boolean>(false);
-  useEffect(() => {
-    // This will be executed only on the client side after mounting
-    setIsClient(true);
-  }, []);
-
   const [openNav, setOpenNav] = useState<boolean>(false);
   const toggleNav = () => {
     if (openNav) {
@@ -25,11 +19,6 @@ const Header = () => {
       setOpenNav(true);
     }
   };
-  const dynamicClasses = isClient
-    ? openNav
-      ? "bg-n-8"
-      : "bg-n-8/90 backdrop-blur-sm"
-    : "bg-n-8/90 backdrop-blur-sm";
 
   const handleClick = () => {
     setOpenNav(false);
@@ -37,9 +26,17 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${dynamicClasses}`}
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm 
+    ${openNav ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}
+    `}
+      // Top navigation bar container with dynamic classes for styling
     >
-      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
+      <div
+        className={`flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4 ${
+          openNav ? "bg-black-100 " : ""
+        }`}
+        // Container for logo, navigation, and additional buttons
+      >
         <a>
           <img
             src={PRLogoW.src}
@@ -47,15 +44,21 @@ const Header = () => {
             height={50}
             alt="PRLogoW"
             className="block w-[2.5rem] xl:mr-8"
-            // href="#hero"
+            // Logo image
           />
         </a>
 
         <nav
-          className={`fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex
-        lg:mx-auto backdrop-blur-sm z-auto ${openNav ? "flex" : "hidden"}`}
+          className={`fixed top-[4rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex
+        lg:mx-auto z-auto lg:bg-transparent ${openNav ? "flex" : "hidden"}`}
+          // Navigation menu, shown or hidden based on `openNav` state
         >
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+          <div
+            className={`relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row ${
+              openNav ? "bg-black-100 " : ""
+            } w-full h-full`}
+            // Container for navigation items, layout changes based on screen size
+          >
             {navMenuItems.map((item) => (
               <a
                 key={item.id}
@@ -65,11 +68,8 @@ const Header = () => {
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
                 lg:leading-5 lg:hover:text-white xl:px-12 z-2 lg:text-white`}
+                // Navigation link with dynamic styling based on item properties
               >
-                {/* above nav class wtih useLocation $ 
-                {item.url === pathName.hash
-                  ? "z-2 lg:text-white"
-                  : "lg:text-white/50"} */}
                 {item.title}
               </a>
             ))}
@@ -86,24 +86,28 @@ const Header = () => {
                 alt="Background"
               />
             </div> */}
-
-            {/* add these components later
-            
-            <Rings />
-
-            <SideLines />
-
-            <BackgroundCircles /> */}
+            <div className="w-full h-full absolute left-0 bottom-3">
+              <Image
+                src="/footer-grid.svg"
+                alt="gridbg"
+                width={500}
+                height={750}
+                className="w-full h-full object-none opacity-50"
+              />
+            </div>
           </div>
         </nav>
         <a
           href="#signup"
           className="button hidden mr-8 text-white/50 transition-colors hover:text-white lg:block"
-        >
-          {/* Theme Toggle */}
-        </a>
+          // Sign-up button, visible only on larger screens
+        ></a>
 
-        <button className="ml-auto lg:hidden px-3" onClick={toggleNav}>
+        <button
+          className="ml-auto lg:hidden px-3"
+          onClick={toggleNav}
+          // Hamburger menu button for mobile view
+        >
           <MenuSvg openNavigation={openNav} />
         </button>
       </div>
