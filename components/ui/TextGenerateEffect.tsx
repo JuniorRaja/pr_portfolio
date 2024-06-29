@@ -43,10 +43,10 @@ export const TextGenerateEffect = ({
               `}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: delay, duration: 0.3 }}
+              transition={{ delay: delay, duration: 0.2 }}
               style={{
                 display: "inline-block",
-                marginRight: "8px",
+                marginRight: "10px",
               }}
             >
               {word}
