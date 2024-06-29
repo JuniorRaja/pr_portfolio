@@ -6,12 +6,15 @@ import { cn } from "@/utils/cn";
 export const TextGenerateEffect = ({
   words,
   className,
+  animationDuration = 2, // Default animation duration
 }: {
   words: string;
   className?: string;
+  animationDuration?: number;
 }) => {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
+
   useEffect(() => {
     animate(
       "span",
@@ -19,7 +22,7 @@ export const TextGenerateEffect = ({
         opacity: 1,
       },
       {
-        duration: 2,
+        duration: animationDuration,
         delay: stagger(0.2),
       }
     );
@@ -29,14 +32,24 @@ export const TextGenerateEffect = ({
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
+          const delay = idx * 0.1;
           return (
             <motion.span
               key={word + idx}
               className={`${
                 idx > 1 ? "text-purple" : "dark:text-white text-black"
-              }  opacity-0`}
+              }
+              ${idx === 0 ? "word-gradient" : ""}
+              `}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: delay, duration: 0.3 }}
+              style={{
+                display: "inline-block",
+                marginRight: "8px",
+              }}
             >
-              {word}{" "}
+              {word}
             </motion.span>
           );
         })}
@@ -46,8 +59,9 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn("font-bold", className)}>
+      <style jsx>{``}</style>
       <div className="mb-4">
-        <div className=" dark:text-white text-black leading-snug tracking-wide">
+        <div className="dark:text-white text-black leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>
