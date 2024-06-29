@@ -22,18 +22,18 @@ const Hero = () => {
         <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8"></p>
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80]">
+      <div className="flex justify-center relative my-36 z-10">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[70vw] flex flex-col items-center justify-center ">
+          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
             Hi, I&apos;m Prasanna Rajedran
           </p>
 
           <TextGenerateEffect
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            className="text-center text-[40px] md:text-6xl lg:text-7xl"
             words="Passion Beyond Responsibilities"
           />
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Manager by day. Developer by Heart. DPM & Full Stack Dev
+          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl mt-5">
+            Manager by day. Developer by Heart
           </p>
 
           <a href="#about">
