@@ -13,7 +13,7 @@ const Waves = () => {
         className={styles.svg}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
+        viewBox={`0 24 150 28`}
         preserveAspectRatio="none"
       >
         <defs>
@@ -45,7 +45,7 @@ const Waves = () => {
           <use
             xlinkHref="#gentle-wave"
             x="50"
-            y="6"
+            y="9"
             fill={waveColours.color3}
             fill-opacity=".2"
           />

@@ -8,8 +8,11 @@ import Waves from "./ui/Waves";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10 mb-[75px] md:mb-5" id="contact">
-      <div className="w-full absolute left-0 bottom-0 min-h-96 sm:min-h-6">
+    <footer
+      className="w-full pt-20 pb-10 mb-1 md:mb-5 lg:mb-[75px]"
+      id="contact"
+    >
+      <div className="w-full absolute left-0 bottom-0">
         <Waves />
       </div>
 
