@@ -33,21 +33,21 @@ const Waves = () => {
             x="50"
             y="0"
             fill={waveColours.color1}
-            fill-opacity=".3"
+            fillOpacity=".3"
           />
           <use
             xlinkHref="#gentle-wave"
             x="50"
             y="3"
             fill={waveColours.color2}
-            fill-opacity=".2"
+            fillOpacity=".2"
           />
           <use
             xlinkHref="#gentle-wave"
             x="50"
             y="9"
             fill={waveColours.color3}
-            fill-opacity=".2"
+            fillOpacity=".2"
           />
         </g>
       </svg>

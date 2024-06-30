@@ -1,5 +1,4 @@
-import { FaLocationArrow } from "react-icons/fa";
-import MagicButton from "./ui/MagicButton";
+import ShimmerButton from "./ui/ShimmerButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { socialMedia } from "@/data";
@@ -82,11 +81,12 @@ const Hero = () => {
           </div>
 
           <a href="#about">
-            <MagicButton
+            {/* <MagicButton
               title={"Know more"}
               icon={<FaLocationArrow />}
               position="right"
-            />
+            /> */}
+            <ShimmerButton title="Know more" />
           </a>
         </div>
       </div>
