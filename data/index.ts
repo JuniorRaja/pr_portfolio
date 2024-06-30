@@ -2,27 +2,22 @@ export const navMenuItems = [
   {
     id: "0",
     title: "About PR",
-    url: "#features",
+    url: "/about",
   },
   {
     id: "1",
     title: "Gallery",
-    url: "#how-to-use",
+    url: "/gallery",
   },
   {
     id: "2",
-    title: "Skills",
-    url: "#roadmap",
+    title: "Works",
+    url: "/works",
   },
   {
     id: "3",
-    title: "Interests",
-    url: "#pricing",
-  },
-  {
-    id: "4",
     title: "Contact",
-    url: "#pricing",
+    url: "/contact",
     onlyMobile: false,
   },
 ];
