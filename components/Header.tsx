@@ -4,9 +4,9 @@
 import { useState } from "react";
 import { navMenuItems } from "@/data";
 import PRLogoW from "../public/PRLogoW.png";
-import background from "../public/background.jpg";
 import MenuSvg from "./ui/MenuSvg";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   //   const pathName = useLocation();
@@ -37,7 +37,7 @@ const Header = () => {
         }`}
         // Container for logo, navigation, and additional buttons
       >
-        <a>
+        <Link href="/">
           <img
             src={PRLogoW.src}
             width={50}
@@ -46,7 +46,7 @@ const Header = () => {
             className="block w-[2.5rem] xl:mr-8"
             // Logo image
           />
-        </a>
+        </Link>
 
         <nav
           className={`fixed top-[4rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex
