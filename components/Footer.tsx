@@ -1,20 +1,16 @@
+"use client";
 import React from "react";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
 import { socialMedia } from "@/data";
 import Image from "next/image";
+import Waves from "./ui/Waves";
 
 const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10 mb-[75px] md:mb-5" id="contact">
-      <div className="w-full absolute left-0 -bottom-72 min-h-96 sm:min-h-6">
-        <Image
-          src="/footer-grid.svg"
-          alt="gridbg"
-          width={100}
-          height={70}
-          className="sm:w-full sm:h-full w-[50%] h-[50%] opacity-50"
-        />
+      <div className="w-full absolute left-0 bottom-0 min-h-96 sm:min-h-6">
+        <Waves />
       </div>
 
       <div className="flex flex-col items-center">
