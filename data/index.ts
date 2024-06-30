@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 export const navMenuItems = [
   {
     id: "0",
@@ -222,13 +224,16 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    url: "https://github.com/JuniorRaja",
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/insta.svg",
+    url: "https://www.instagram.com/prasanna.it.seems/",
   },
   {
     id: 3,
     img: "/link.svg",
+    url: "https://www.linkedin.com/in/rajendranprasanna/",
   },
 ];

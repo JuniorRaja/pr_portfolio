@@ -2,6 +2,8 @@ import { FaLocationArrow } from "react-icons/fa";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { socialMedia } from "@/data";
+import Image from "next/image";
 const Hero = () => {
   return (
     <div className="pb-20 pt-36">
@@ -35,6 +37,24 @@ const Hero = () => {
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl mt-5">
             Manager by day. Developer by Heart
           </p>
+
+          <div className="flex items-center md:gap-3 gap-6 mt-10">
+            {socialMedia.map((prof) => (
+              <a
+                key={prof.id}
+                href={prof.url}
+                target="_blank"
+                className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+              >
+                <Image
+                  src={prof.img}
+                  alt="Social Media"
+                  height={20}
+                  width={20}
+                />
+              </a>
+            ))}
+          </div>
 
           <a href="#about">
             <MagicButton
