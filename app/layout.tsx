@@ -4,12 +4,15 @@ import "./globals.css";
 import { ThemeProvider } from "./provider";
 import Footer from "../components/Footer";
 import Header from "@/components/Header";
+import PRLogoW from "../public/PRLogoW.png";
+import PRLogoB from "../public/PRLogoB.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PR Portfolio",
+  title: "PR Verse",
   description: "Portfolio - NextJS",
+  icons: PRLogoW.src,
 };
 
 export default function RootLayout({
