@@ -25,7 +25,7 @@ export default function RootLayout({
       {/*  */}
       <body className={`${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <main className="relative bg-black-100 flex justify-center items-center overflow-hidden flex-col mx-auto sm:px-10 px-5">
+          <main className="relative bg-slate-950 flex justify-center items-center overflow-hidden flex-col mx-auto sm:px-10 px-5">
             <Header />
             {children}
             <Footer />

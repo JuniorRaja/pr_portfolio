@@ -33,7 +33,7 @@ const Header = () => {
     >
       <div
         className={`flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4 ${
-          openNav ? "bg-black-100 " : ""
+          openNav ? "bg-slate-950 " : ""
         }`}
         // Container for logo, navigation, and additional buttons
       >
@@ -55,7 +55,7 @@ const Header = () => {
         >
           <div
             className={`relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row ${
-              openNav ? "bg-black-100 " : ""
+              openNav ? "bg-slate-950 " : ""
             } w-full h-full`}
             // Container for navigation items, layout changes based on screen size
           >
