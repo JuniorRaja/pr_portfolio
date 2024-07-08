@@ -14,7 +14,7 @@ const ShimmerButton = ({ title }: { title: string }) => {
             border-slate-800 bg-[length:200%_100%] px-6 
             font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 ${
               isHovered
-                ? "hover:bg-[linear-gradient(45deg,#040e44,45%,#120d57,55%,#160c5c)] scale-105 text-white"
+                ? "hover:bg-[linear-gradient(45deg,#040e44,45%,#120d57,55%,#160c5c)] scale-105 text-white uppercase"
                 : ""
             }`}
       onMouseEnter={handleMouseMovement}
