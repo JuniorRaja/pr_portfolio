@@ -1,6 +1,5 @@
 "use client";
 
-import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import doorsImg from "@/public/gallery/thumbnails/tnail_doors.jpeg";
 import macroImg from "@/public/gallery/thumbnails/tnail_macro.jpeg";
 import minimalImg from "@/public/gallery/thumbnails/tnail_minimal.jpg";
@@ -66,7 +65,7 @@ const Gallery = () => {
           {albums.map((album) => (
             <div
               key={album.name}
-              className="bg-card rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+              className="bg-card rounded-md overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={album.img.src}
