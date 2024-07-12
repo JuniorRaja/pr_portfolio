@@ -1,4 +1,4 @@
-import { url } from "inspector";
+import * as logoIdx from "../public/techstack";
 
 export const navMenuItems = [
   {
@@ -236,4 +236,44 @@ export const socialMedia = [
     img: "/link.svg",
     url: "https://www.linkedin.com/in/rajendranprasanna/",
   },
+];
+
+export const techStack = [
+  { img: logoIdx.csharplogo, label: "C#" },
+  { img: logoIdx.bootstraplogo, label: "Bootstrap" },
+  { img: logoIdx.csslogo, label: "CSS" },
+  { img: logoIdx.dotnetcore, label: ".NET Core" },
+  { img: logoIdx.express, label: "Express" },
+  { img: logoIdx.htmllogo, label: "HTML" },
+  { img: logoIdx.gitlogo, label: "Git" },
+  { img: logoIdx.Jquerylogo, label: "JQuery" },
+  { img: logoIdx.jslogo, label: "JavaScript" },
+  { img: logoIdx.mysqllogo, label: "MySQL" },
+  { img: logoIdx.nodejslogo, label: "NodeJS" },
+  { img: logoIdx.reactlogo, label: "React" },
+  { img: logoIdx.reduxlogo, label: "Redux" },
+  { img: logoIdx.muilogo, label: "Material-UI" },
+  { img: logoIdx.npmlogo, label: "NPM" },
+  { img: logoIdx.scsslogo, label: "SCSS" },
+  { img: logoIdx.tslogo, label: "TypeScript" },
+  { img: logoIdx.vbdotnetlogo, label: "VB.NET" },
+  { img: logoIdx.yarnlogo, label: "Yarn" },
+];
+export const words = [
+  "Deputy\u00A0Proj.\u00A0Manager",
+  "Full\u00A0Stack\u00A0Developer",
+  "Photographer",
+];
+export const interests = [
+  "Web Development",
+  "Project Management",
+  "Books",
+  "Cooking",
+  "Photography",
+  "Travel",
+  "Music",
+  "Psychology",
+  "UI-UX",
+  "Dark Jokes",
+  "Photoshop",
 ];
