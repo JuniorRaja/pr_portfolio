@@ -135,7 +135,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="text-foreground py-12 px-6 max-w-4xl mx-auto">
+        <div className="text-foreground py-12 mx-auto">
           <div className="text-center mb-12">
             {/* <h1 className="text-5xl font-extrabold mb-6">Greetings!</h1> */}
             <p className="text-xl mb-6">
@@ -180,15 +180,21 @@ const About = () => {
             </div>
           </div>
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6">TOOLS</h2>
-            <div className="flex justify-center space-x-4 my-8">
+            <h2 className="text-3xl font-bold mb-6">
+              I can <span className="text-purple">work</span> with
+            </h2>
+            <div className="flex justify-center flex-wrap w-[100%] gap-2 my-8">
               {techStack.map((tech) => (
-                <img
+                <div
                   key={tech.label}
-                  src={tech.img.src}
-                  alt={tech.label}
-                  className="rounded-full shadow-lg w-10 h-10 object-cover" // Adjust size as needed
-                />
+                  className="mr-2 mb-2 p-2 rounded-full hover:-translate-y-1 bg-white bg-opacity-10 border transition hover:border-white"
+                >
+                  <img
+                    src={tech.img.src}
+                    alt={tech.label}
+                    className="rounded-full shadow-lg w-12 h-12 object-cover" // Adjust size as needed
+                  />
+                </div>
               ))}
             </div>
 
