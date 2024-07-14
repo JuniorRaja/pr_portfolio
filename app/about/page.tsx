@@ -61,7 +61,7 @@ const About = () => {
   }, []);
   return (
     <div className="max-w-7xl w-full">
-      <section className="w-full py-20 min-h-screen pt-36">
+      <section className="w-full py-20 min-h-screen">
         {/* Header Div */}
         <div className="w-full h-[auto] mb-10 md:mb-20">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
