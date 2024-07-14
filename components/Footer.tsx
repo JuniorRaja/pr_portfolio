@@ -3,7 +3,7 @@ import { socialMedia, footerLinks } from "@/data";
 import Image from "next/image";
 import Waves from "./ui/Waves";
 import footerLogo from "@/public/prlogo-footerx.png";
-import PRLogo from "@/public/prlogoW.png";
+import PRLogo from "@/public/PRLogoW.png";
 
 const Footer = () => {
   return (
