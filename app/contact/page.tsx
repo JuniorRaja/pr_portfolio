@@ -7,7 +7,7 @@ const Contact = () => {
           I am already excited
         </p>
         <h1 className="heading">
-          Let's <span className="text-purple">Connect</span>
+          Let&apos;s <span className="text-purple">Connect</span>
         </h1>
 
         <div className="flex flex-col md:flex-row bg-white bg-opacity-10 my-6 text-card-foreground rounded-xl overflow-hidden">
