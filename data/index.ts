@@ -236,6 +236,11 @@ export const socialMedia = [
     img: "/link.svg",
     url: "https://www.linkedin.com/in/rajendranprasanna/",
   },
+  {
+    id: 4,
+    img: "/mail.svg",
+    url: "mailto:contactme@prasannar.com",
+  },
 ];
 
 export const techStack = [
@@ -259,11 +264,13 @@ export const techStack = [
   { img: logoIdx.vbdotnetlogo, label: "VB.NET" },
   { img: logoIdx.yarnlogo, label: "Yarn" },
 ];
+
 export const words = [
   "Deputy\u00A0Proj.\u00A0Manager",
   "Full\u00A0Stack\u00A0Developer",
   "Photographer",
 ];
+
 export const interests = [
   "Web Development",
   "Project Management",
@@ -276,4 +283,14 @@ export const interests = [
   "UI-UX",
   "Dark Jokes",
   "Photoshop",
+];
+
+export const footerLinks = [
+  { name: "Home", href: "#" },
+  { name: "About PR", href: "#" },
+  { name: "Gallery", href: "#" },
+  { name: "Projects", href: "#" },
+  { name: "Interests", href: "#" },
+  { name: "Skills", href: "#" },
+  { name: "Contact", href: "#" },
 ];
