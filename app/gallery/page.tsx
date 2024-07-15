@@ -1,54 +1,7 @@
-import doorsImg from "@/public/gallery/thumbnails/tnail_doors.jpeg";
-import macroImg from "@/public/gallery/thumbnails/tnail_macro.jpeg";
-import minimalImg from "@/public/gallery/thumbnails/tnail_minimal.jpg";
-import natureImg from "@/public/gallery/thumbnails/tnail_nature.jpg";
-import patternsImg from "@/public/gallery/thumbnails/tnail_patterns.jpg";
-import Link from "next/link";
+"use client";
+import Carousel from "@/components/ui/Carousel";
 
 const Gallery = () => {
-  const albums = [
-    {
-      id: 1,
-      name: "Doors & Windows",
-      likes: 0,
-      views: 0,
-      img: doorsImg,
-      route: "doors-windows",
-    },
-    {
-      id: 2,
-      name: "Macro",
-      likes: 0,
-      views: 0,
-      img: macroImg,
-      route: "macro",
-    },
-    {
-      id: 3,
-      name: "Minimal",
-      likes: 0,
-      views: 0,
-      img: minimalImg,
-      route: "minimal",
-    },
-    {
-      id: 4,
-      name: "Nature",
-      likes: 0,
-      views: 0,
-      img: natureImg,
-      route: "nature",
-    },
-    {
-      id: 5,
-      name: "Patterns",
-      likes: 0,
-      views: 0,
-      img: patternsImg,
-      route: "patterns",
-    },
-  ];
-
   return (
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen pt-36">
@@ -61,7 +14,9 @@ const Gallery = () => {
           that you can never master. I have tried to categorize my photos and my
           faviourtes of them are Minimal, Doors & Patterns.
         </p>
-
+        <div className="h-auto min-h-[40rem]">
+          <Carousel />
+        </div>
         {/* Serach feature will be added soon
         <div className="flex justify-center mb-8">
           <input
@@ -70,6 +25,8 @@ const Gallery = () => {
             className="w-full max-w-md p-2 border border-border rounded bg-input text-foreground shadow-md"
           />
         </div> */}
+        {/* 
+        New Slider implementated. hence commented the old
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {albums.map((album) => (
             <Link key={album.route} href={`/gallery/${album.route}`} passHref>
@@ -91,7 +48,7 @@ const Gallery = () => {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
 
         {/* <div className="flex items-center justify-center mt-40 relative">
           <ImageSlider />
