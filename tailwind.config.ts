@@ -75,14 +75,19 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        boxShadow: {
-          glow: "0 0 15px rgba(255, 255, 255, 0.8)",
-        },
+      },
+      boxShadow: {
+        glow: "0 0 15px rgba(255, 255, 255, 0.8)",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "radial-gradient": "radial-gradient(var(--tw-gradient-stops))",
+        "conic-gradient":
+          "conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)",
       },
       keyframes: {
         "accordion-down": {

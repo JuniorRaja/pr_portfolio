@@ -294,3 +294,36 @@ export const footerLinks = [
   { name: "Skills", href: "#" },
   { name: "Contact", href: "#" },
 ];
+
+export const roadmap = [
+  {
+    id: "0",
+    title: "Deputy Project Manager - Development",
+    text: "Engaged in Software Development Lifecycle (SDLC) from requirement analysis, documentation (functional specifications, technical design), coding & Unit testing to maintenance of proposed applications.",
+    date: "Apr 2024",
+    status: "Currently",
+
+    colorful: false, //change for border animation
+  },
+  {
+    id: "1",
+    title: "Assitant Project Manager - Development",
+    text: "rain & monitor Junior Associates’ and provide Knowledge Training about Business process, Coding standards, assign tasks and requirements and track their performance",
+    date: "Oct 2022 - Mar 2024",
+    status: "Previously",
+  },
+  {
+    id: "2",
+    title: "Senior Software Engineer",
+    text: "C# · .NET Framework · REST APIs · Computer Science · Communication · Test-Driven Development · .NET Core",
+    date: "May 2022 - Oct 2022",
+    status: "Previously",
+  },
+  {
+    id: "3",
+    title: "Software Engineer Trainee",
+    text: "Computer Science · Communication · Test-Driven Development · .NET Core",
+    date: "Jun 2019 - Apr 2022",
+    status: "Previously",
+  },
+];

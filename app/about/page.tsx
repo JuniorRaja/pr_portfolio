@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Image from "next/image";
-
+import grid from "/public/grid.png";
 import AIAvatar from "/public/AIAvatar-4.png";
 import { FlipWords } from "@/components/ui/flip-words";
-import { socialMedia, techStack, words, interests } from "@/data";
+import { socialMedia, techStack, words, interests, roadmap } from "@/data";
 import ShimmerButton from "@/components/ui/ShimmerButton";
+import Tagline from "@/components/ui/Tagline";
 
 const About = () => {
   const [age, setAge] = useState<string>("");
@@ -197,7 +198,9 @@ const About = () => {
                 </div>
               ))}
             </div>
-
+            <h2 className="text-3xl font-bold mb-6">
+              Things that <span className="text-purple">excite</span> me
+            </h2>
             <div className="flex flex-wrap justify-center space-x-2 ">
               {interests.map((interest) => (
                 <span
@@ -208,6 +211,66 @@ const About = () => {
                 </span>
               ))}
             </div>
+          </div>
+          <h2 className="text-3xl text-center font-bold mb-8">
+            My <span className="text-purple">Career</span> Experiences
+          </h2>
+          <div className="relative grid gap-10 md:gap-4 md:grid-cols-2 md:pb-[7rem]">
+            {roadmap.map((item, idx) => {
+              //const status = item.status === "done" ? "Done" : "In-Progress";
+
+              return (
+                <div
+                  key={item.id}
+                  className={`md:flex even:md:translate-y-[8rem] p-0.25 rounded-[2.5rem] 
+                    ${item.colorful ? "bg-conic-gradient" : "bg-n-6"}`}
+                >
+                  <div
+                    className="relative p-8 bg-n-8 rounded-[2rem] overflow-hidden xl:p-15 
+                  hover:-translate-y-1 bg-white bg-opacity-10 border transition hover:border-white"
+                  >
+                    <div className="absolute top-0 left-0 max-w-full z-10">
+                      <img
+                        className="w-full"
+                        width={150}
+                        height={150}
+                        src={grid.src}
+                        alt="Grid"
+                      />
+                    </div>
+
+                    <div className="relative z-1">
+                      <div className="flex items-center justify-between max-w-[27rem] mb-8 md:mb-20">
+                        <Tagline className="text-sm">{item.date}</Tagline>
+
+                        <div className="flex items-center px-4 py-1 bg-n-1 rouned text-n-8">
+                          {/* <img
+                          src={item.status === "done" ? check2 : loading}
+                          alt={status}
+                          width={16}
+                          height={16}
+                          className="mr-2.5"
+                        /> */}
+                          <div className="tagline text-sm">{item.status}</div>
+                        </div>
+                      </div>
+
+                      <div className="mb-10 -my-10 -mx-15">
+                        {/* <img
+                          src={item.imageUrl}
+                          className="w-full"
+                          width={630}
+                          height={420}
+                          alt={item.title}
+                        /> */}
+                      </div>
+                      <h4 className="h-4 mb-4 font-bold">{item.title}</h4>
+                      <p className="body-2 text-n-4">{item.text}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           {/* <div className="text-center">
             <div className="flex justify-center space-x-12">
