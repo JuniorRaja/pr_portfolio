@@ -180,7 +180,7 @@ const About = () => {
               </a>
             </div>
           </div>
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" id="skills">
             <h2 className="text-3xl font-bold mb-6">
               I can <span className="text-purple">work</span> with
             </h2>
@@ -201,7 +201,10 @@ const About = () => {
             <h2 className="text-3xl font-bold mb-6">
               Things that <span className="text-purple">excite</span> me
             </h2>
-            <div className="flex flex-wrap justify-center space-x-2 ">
+            <div
+              className="flex flex-wrap justify-center space-x-2"
+              id="interests"
+            >
               {interests.map((interest) => (
                 <span
                   key={interest}

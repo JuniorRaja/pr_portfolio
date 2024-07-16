@@ -4,6 +4,7 @@ import Image from "next/image";
 import Waves from "./ui/Waves";
 import footerLogo from "@/public/prlogo-footerx.png";
 import PRLogo from "@/public/PRLogoW.png";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -38,9 +39,12 @@ const Footer = () => {
               <ul className="flex justify-center flex-wrap gap-y-2 space-x-6 text-sm font-medium lg:text-lg">
                 {footerLinks.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="hover:text-primary">
+                    <Link
+                      href={link.href}
+                      className="hover:underline hover:text-primary"
+                    >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

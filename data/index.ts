@@ -286,13 +286,13 @@ export const interests = [
 ];
 
 export const footerLinks = [
-  { name: "Home", href: "#" },
-  { name: "About PR", href: "#" },
-  { name: "Gallery", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Interests", href: "#" },
-  { name: "Skills", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About PR", href: "/about" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Projects", href: "/works" },
+  { name: "Interests", href: "/about#interests" },
+  { name: "Skills", href: "/about#skills" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export const roadmap = [
