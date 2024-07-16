@@ -1,5 +1,18 @@
 "use client";
+import React, { useState } from "react";
+import GridGlobe from "@/components/ui/GridGlobe";
+import { BsGeoAlt } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
+import { BsMailboxFlag } from "react-icons/bs";
+
 const Contact = () => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  // Function to update the selected option
+  const handleSelectOption = (option: string) => {
+    setSelectedOption(option);
+  };
+
   return (
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen pt-36">
@@ -11,50 +24,68 @@ const Contact = () => {
         </h1>
 
         <div className="flex flex-col md:flex-row bg-white bg-opacity-10 my-6 text-card-foreground rounded-xl overflow-hidden">
-          {/* <div className="w-full md:w-1/2 bg-cover bg-center"></div> */}
+          <div className="w-full md:w-1/2 bg-cover bg-center">
+            <GridGlobe UsedAt="Contact" />
+          </div>
           <div className="w-full md:w-1/2 p-8">
             <h2 className="text-2xl font-bold mb-4">Hello, there. </h2>
             <p className="mb-6">
               Want to build a web-app, collaborate on a project, or just say hi?
             </p>
-            <div className="flex items-center mb-4">
-              <img
-                alt="location-icon"
-                src="https://openui.fly.dev/openui/24x24.svg?text=📍"
-                className="mr-2"
-              />
+            <div className="flex items-center gap-4 mb-4">
+              <BsGeoAlt className="w-4 h-4" />
               <span>Chennai, India</span>
             </div>
-            <div className="flex items-center mb-4">
-              <img
-                alt="phone-icon"
-                src="https://openui.fly.dev/openui/24x24.svg?text=📞"
-                className="mr-2"
-              />
+            <div className="flex items-center gap-4 mb-4">
+              <BsWhatsapp className="w-4 h-4" />
               <span>+91 78711 94171</span>
             </div>
-            <div className="flex items-center mb-4">
-              <img
-                alt="email-icon"
-                src="https://openui.fly.dev/openui/24x24.svg?text=📧"
-                className="mr-2"
-              />
+            <div className="flex items-center gap-4 mb-4">
+              <BsMailboxFlag className="w-4 h-4" />
               <span>contactme@prasannar.com</span>
             </div>
             <h3 className="text-lg font-semibold mt-8 mb-2">
               What would you like to talk about?
             </h3>
             <div className="flex space-x-2 mb-6">
-              <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg">
+              <button
+                className={`px-4 py-2 rounded-lg ${
+                  selectedOption === "Web Apps"
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-primary text-primary"
+                }`}
+                onClick={() => handleSelectOption("Web Apps")}
+              >
                 Web Apps
               </button>
-              <button className="border border-primary text-primary px-4 py-2 rounded-lg">
+              <button
+                className={`px-4 py-2 rounded-lg ${
+                  selectedOption === "Design Collab"
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-primary text-primary"
+                }`}
+                onClick={() => handleSelectOption("Design Collab")}
+              >
                 Design Collab
               </button>
-              <button className="border border-primary text-primary px-4 py-2 rounded-lg">
+              <button
+                className={`px-4 py-2 rounded-lg ${
+                  selectedOption === "Opportunity"
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-primary text-primary"
+                }`}
+                onClick={() => handleSelectOption("Opportunity")}
+              >
                 Opportunity
               </button>
-              <button className="border border-primary text-primary px-4 py-2 rounded-lg">
+              <button
+                className={`px-4 py-2 rounded-lg ${
+                  selectedOption === "Other"
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-primary text-primary"
+                }`}
+                onClick={() => handleSelectOption("Other")}
+              >
                 Other
               </button>
             </div>

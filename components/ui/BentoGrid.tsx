@@ -142,7 +142,7 @@ export const BentoGridItem = ({
           </div>
 
           {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
+          {id === 2 && <GridGlobe UsedAt="Grid" />}
 
           {/* Tech stack list div */}
           {id === 3 && (
