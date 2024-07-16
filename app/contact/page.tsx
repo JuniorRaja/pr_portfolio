@@ -4,15 +4,54 @@ import GridGlobe from "@/components/ui/GridGlobe";
 import { BsGeoAlt } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsMailboxFlag } from "react-icons/bs";
+import ShimmerButton from "@/components/ui/ShimmerButton";
 
 const Contact = () => {
   const [selectedOption, setSelectedOption] = useState("");
 
-  // Function to update the selected option
   const handleSelectOption = (option: string) => {
     setSelectedOption(option);
   };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log(formData);
+      console.log(JSON.stringify(formData));
+      console.log(response);
+
+      if (response.ok) {
+        setStatus("Email sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("Failed to send email.");
+      }
+    } catch (error) {
+      setStatus("Error sending email.");
+    }
+  };
   return (
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen pt-36">
@@ -89,7 +128,7 @@ const Contact = () => {
                 Other
               </button>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label
                   htmlFor="name"
@@ -101,8 +140,10 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-3 py-2 border rounded-lg bg-input text-foreground"
+                  className="w-full px-3 py-2 border rounded-lg bg-input text-foreground bg-[#020617]"
                   placeholder="Name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -117,12 +158,14 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-3 py-2 border rounded-lg bg-input text-foreground"
+                  className="w-full px-3 py-2 border rounded-lg bg-input text-foreground bg-[#020617]"
                   placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <label
                   htmlFor="phone"
                   className="block text-sm font-medium mb-1"
@@ -136,7 +179,7 @@ const Contact = () => {
                   className="w-full px-3 py-2 border rounded-lg bg-input text-foreground"
                   placeholder="Phone Number"
                 />
-              </div>
+              </div> */}
               <div className="mb-4">
                 <label
                   htmlFor="message"
@@ -147,17 +190,23 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  className="w-full px-3 py-2 border rounded-lg bg-input text-foreground"
+                  className="w-full px-3 py-2 border rounded-lg bg-input text-foreground bg-[#020617]"
                   placeholder="Type Here"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg"
+                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hidden"
               >
-                Submit
+                {status ? status : "Submit"}
               </button>
+              <ShimmerButton
+                title={status ? status : "Submit"}
+                buttonType="submit"
+              />
             </form>
           </div>
         </div>
