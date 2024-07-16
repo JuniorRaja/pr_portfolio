@@ -4,9 +4,11 @@ import { useState } from "react";
 const ShimmerButton = ({
   title,
   customCSS,
+  buttonType,
 }: {
   title: string;
   customCSS?: string;
+  buttonType?: "button" | "submit";
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -25,6 +27,7 @@ const ShimmerButton = ({
             } ${customCSS ? customCSS : ""}`}
       onMouseEnter={handleMouseMovement}
       onMouseLeave={handleMouseMovement}
+      type={buttonType ? buttonType : "button"}
     >
       {title}
     </button>
