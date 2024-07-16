@@ -23,11 +23,11 @@ const Contact = () => {
           Let&apos;s <span className="text-purple">Connect</span>
         </h1>
 
-        <div className="flex flex-col md:flex-row bg-white bg-opacity-10 my-6 text-card-foreground rounded-xl overflow-hidden">
-          <div className="w-full md:w-1/2 bg-cover bg-center">
+        <div className="flex flex-col lg:flex-row bg-white bg-opacity-10 my-6 text-card-foreground rounded-xl overflow-hidden">
+          <div className="w-full lg:w-1/2 bg-cover bg-center">
             <GridGlobe UsedAt="Contact" />
           </div>
-          <div className="w-full md:w-1/2 p-8">
+          <div className="w-full lg:w-1/2 p-8">
             <h2 className="text-2xl font-bold mb-4">Hello, there. </h2>
             <p className="mb-6">
               Want to build a web-app, collaborate on a project, or just say hi?
