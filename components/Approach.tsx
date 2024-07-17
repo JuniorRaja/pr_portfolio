@@ -2,7 +2,7 @@
 import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
+// import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
 import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 const Approach = () => {
@@ -18,17 +18,17 @@ const Approach = () => {
             descr="Learn how to build and deploy a modern developer portfolio with animations using Next.js. Perfect for showcasing your web development skills!"
             icon={<AceternityIcon title="Phase 1" />}
           >
-            <CanvasRevealEffect
+            {/* <CanvasRevealEffect
               animationSpeed={5.1}
               containerClassName="bg-emerald-900"
-            />
+            /> */}
           </Card>
           <Card
             title="Development & Preparation"
             descr="Learn how to build and deploy a modern developer portfolio with animations using Next.js. Perfect for showcasing your web development skills!"
             icon={<AceternityIcon title="Phase 2" />}
           >
-            <CanvasRevealEffect
+            {/* <CanvasRevealEffect
               animationSpeed={3}
               containerClassName="bg-black"
               colors={[
@@ -36,7 +36,7 @@ const Approach = () => {
                 [232, 121, 249],
               ]}
               dotSize={2}
-            />
+            /> */}
             {/* Radial gradient for the cute fade 
             <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />*/}
           </Card>
@@ -45,11 +45,11 @@ const Approach = () => {
             descr="Learn how to build and deploy a modern developer portfolio with animations using Next.js. Perfect for showcasing your web development skills!"
             icon={<AceternityIcon title="Phase 3" />}
           >
-            <CanvasRevealEffect
+            {/* <CanvasRevealEffect
               animationSpeed={3}
               containerClassName="bg-sky-600"
               colors={[[125, 211, 252]]}
-            />
+            /> */}
           </Card>
         </div>
       </>

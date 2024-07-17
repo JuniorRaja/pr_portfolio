@@ -38,7 +38,7 @@ const Header = () => {
         // Container for logo, navigation, and additional buttons
       >
         <Link href="/">
-          <img
+          <Image
             src={PRLogoW.src}
             width={50}
             height={50}

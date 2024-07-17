@@ -190,7 +190,7 @@ const About = () => {
                   key={tech.label}
                   className="mr-2 mb-2 p-2 rounded-full hover:-translate-y-1 bg-white bg-opacity-10 border transition hover:border-white"
                 >
-                  <img
+                  <Image
                     src={tech.img.src}
                     alt={tech.label}
                     className="rounded-full shadow-lg w-12 h-12 object-cover" // Adjust size as needed
@@ -233,7 +233,7 @@ const About = () => {
                   hover:-translate-y-1 bg-white bg-opacity-10 border transition hover:border-white"
                   >
                     <div className="absolute top-0 left-0 max-w-full z-10">
-                      <img
+                      <Image
                         className="w-full"
                         width={150}
                         height={150}
