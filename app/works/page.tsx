@@ -1,7 +1,7 @@
 "use client";
 
 import { PinContainer } from "@/components/ui/3d-pin";
-import ImageCarousel from "@/components/ui/ImageCarousel";
+//import ImageCarousel from "@/components/ui/ImageCarousel";
 import { projects } from "@/data";
 import { FaLocationArrow } from "react-icons/fa";
 import Image from "next/image";
