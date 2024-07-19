@@ -32,7 +32,7 @@ const Works = () => {
                   <Image
                     src={img}
                     alt={title}
-                    className="absolute w-[70%] h-[70%]"
+                    className="absolute w-[95%] h-[55%] md:h-[60%] object-contain md:object-cover"
                     width={550}
                     height={275}
                   />
