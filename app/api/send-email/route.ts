@@ -3,13 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(request: NextRequest) {
-  const { name, email, message } = await request.json();
+  const { name, email, message, option } = await request.json();
 
   const htmlContent = `
     <h1 style="color:blue;">New Message from PR-Dev-Protfolio</h1>
     <p style="font-size:16px;">Name: ${name}</p>
     <p style="font-size:16px;">Email: ${email}</p>
     <p style="font-size:16px;">Message: ${message}</p>
+    <p style="font-size:16px;">For: ${option}</p>
   `;
 
   const textContent = `
@@ -17,6 +18,7 @@ export async function POST(request: NextRequest) {
     Name: ${name}
     Email: ${email}
     Message: ${message}
+    Message: ${option}
   `;
 
   // Create a transporter object using Gmail's SMTP transport
