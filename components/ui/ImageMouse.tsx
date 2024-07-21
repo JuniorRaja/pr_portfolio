@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 interface ImageProps {
@@ -62,10 +62,12 @@ const imagesData: ImageProps[] = [
 ];
 
 const ImageGallery: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const activate = (image: HTMLElement, x: number, y: number) => {
     if (image) {
-      image.style.left = `${x}px`;
-      image.style.top = `${y}px`;
+      image.style.left = `${x + 200}px`;
+      image.style.top = `${y + 200}px`;
       image.style.zIndex = String(globalIndex);
       image.dataset.status = "active";
       setlast({ x, y });
@@ -84,13 +86,20 @@ const ImageGallery: React.FC = () => {
   var [last, setlast] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (distanceFromLast(e.clientX, e.clientY) > window.innerWidth % 110) {
-      console.log(globalIndex);
+    if (!containerRef.current) return;
+
+    const { left, top } = containerRef.current.getBoundingClientRect();
+    console.log("left", left, "top", top);
+    console.log("e.clientX", e.clientX, "e.clientY", e.clientY);
+    if (
+      distanceFromLast(e.clientX - left, e.clientY - top) >
+      containerRef.current.getBoundingClientRect().width % 60
+    ) {
       const lead = images[globalIndex % images.length];
       const tail = images[(globalIndex - 5) % images.length];
 
       if (lead) {
-        activate(lead, e.clientX, e.clientY);
+        activate(lead, e.clientX - left, e.clientY - top);
       }
 
       if (tail) {
@@ -100,8 +109,23 @@ const ImageGallery: React.FC = () => {
     }
   };
 
+  const onMouseOut = () => {
+    if (!containerRef.current) return;
+
+    const images = containerRef.current.querySelectorAll(
+      "#image"
+    ) as NodeListOf<HTMLElement>;
+    images.forEach((image) => (image.dataset.status = "inactive"));
+  };
+
   return (
-    <div onMouseMove={handleMouseMove} className="w-[100vw] h-[100vh]">
+    <div
+      ref={containerRef}
+      id="container"
+      onMouseMove={handleMouseMove}
+      onMouseOut={onMouseOut}
+      className="w-auto  h-[70vh] border border-purple"
+    >
       {imagesData.map((image) => (
         <StyledImage
           id="image"
@@ -109,7 +133,7 @@ const ImageGallery: React.FC = () => {
           data-index={image["data-index"]}
           data-status={image["data-status"]}
           src={image.src}
-          className="StyledImage"
+          className="StyledImage rounded-lg"
         />
       ))}
     </div>
