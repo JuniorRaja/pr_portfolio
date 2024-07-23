@@ -93,11 +93,17 @@ const Carousel: React.FC = () => {
             id={`CarouselItem`}
           >
             <div className={styles.content}>
+              {/* <div className={styles.blurbackdrop}> </div> */}
               {/* <div className="absolute top-1/2 left-[100px] -translate-y-1/2 w-[300px] text-left text-[#eee] font-sans hidden"> */}
               <div className={styles.name}>{item.name}</div>
-              <div className={styles.des}>{item.des}</div>
+              <div>{item.des}</div>
               {/* <button>See More</button> */}
-              <Link key={item.route} href={`/gallery/${item.route}`} passHref>
+              <Link
+                className={styles.link}
+                key={item.route}
+                href={`/gallery/${item.route}`}
+                passHref
+              >
                 See More
               </Link>
             </div>

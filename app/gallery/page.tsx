@@ -14,7 +14,7 @@ const Gallery = () => {
           that you can never master. I have tried to categorize my photos and my
           faviourtes of them are Minimal, Doors & Patterns.
         </p>
-        <div className="h-auto min-h-[40rem]">
+        <div className="h-auto min-h-[45rem]">
           <Carousel />
         </div>
         {/* Serach feature will be added soon
