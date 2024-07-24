@@ -38,7 +38,7 @@ const Carousel: React.FC = () => {
       likes: 0,
       views: 0,
       img: doorsImg,
-      route: "doors-windows",
+      route: "doors",
       des: "Unique doors and windows from around the world.",
     },
     {

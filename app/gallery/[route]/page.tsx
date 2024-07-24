@@ -1,6 +1,5 @@
 import ImageMouse from "@/components/ui/ImageMouse";
 import { LayoutGrid } from "@/components/ui/layout-grid";
-import * as images from "../../../public/gallery/macro";
 
 const Page = ({ params }: { params: { route: string } }) => {
   const InnerSkeleton = () => {
@@ -19,62 +18,62 @@ const Page = ({ params }: { params: { route: string } }) => {
     {
       id: 1,
       content: <InnerSkeleton />,
-      className: "md:col-span-1",
-      thumbnail: images.macro_1.src,
+      className: "md:col-span-3",
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_1.webp`,
     },
     {
       id: 2,
       content: <InnerSkeleton />,
       className: "col-span-1",
-      thumbnail: images.macro_2.src,
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_2.webp`,
     },
     {
       id: 3,
       content: <InnerSkeleton />,
       className: "col-span-1",
-      thumbnail: images.macro_3.src,
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_3.webp`,
     },
     {
       id: 4,
       content: <InnerSkeleton />,
       className: "md:col-span-1",
-      thumbnail: images.macro_4.src,
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_4.webp`,
     },
     {
       id: 5,
       content: <InnerSkeleton />,
-      className: "md:col-span-1",
-      thumbnail: images.macro_5.src,
+      className: "md:col-span-2",
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_5.webp`,
     },
     {
       id: 6,
       content: <InnerSkeleton />,
       className: "col-span-1",
-      thumbnail: images.macro_6.src,
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_6.webp`,
     },
     {
       id: 7,
       content: <InnerSkeleton />,
-      className: "col-span-1",
-      thumbnail: images.macro_7.src,
+      className: "col-span-2",
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_7.webp`,
     },
     {
       id: 8,
       content: <InnerSkeleton />,
       className: "md:col-span-1",
-      thumbnail: images.macro_8.src,
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_8.webp`,
     },
     {
       id: 9,
       content: <InnerSkeleton />,
       className: "col-span-1",
-      thumbnail: images.macro_9.src,
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_9.webp`,
     },
     {
       id: 10,
       content: <InnerSkeleton />,
-      className: "md:col-span-1",
-      thumbnail: images.macro_10.src,
+      className: "md:col-span-3",
+      thumbnail: `https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/${params.route}/${params.route}_10.webp`,
     },
   ];
 
@@ -83,7 +82,7 @@ const Page = ({ params }: { params: { route: string } }) => {
       <section className="w-full py-20 min-h-screen pt-36">
         <div className="my-4">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
-            hover to see the flow of
+            see the beauty of
           </p>
           <h1 className="heading">
             <span className="text-purple">{params.route.toUpperCase()}</span>{" "}
