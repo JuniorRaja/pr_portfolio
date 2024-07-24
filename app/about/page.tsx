@@ -193,6 +193,8 @@ const About = () => {
                   <Image
                     src={tech.img.src}
                     alt={tech.label}
+                    height={100}
+                    width={100}
                     className="rounded-full shadow-lg w-12 h-12 object-cover" // Adjust size as needed
                   />
                 </div>
