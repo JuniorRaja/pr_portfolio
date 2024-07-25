@@ -10,17 +10,27 @@ const Works = () => {
   return (
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen pt-36">
-        <h1 className="heading">
+        <h1 className="text-4xl font-bold text-center mb-4 text-white">
           My <span className="text-purple">Works</span>
         </h1>
-        <div className="flex flex-wrap items-center justify-center p-4 gap-10 mt-10">
+        <p className="text-center text-muted-foreground mb-8 text-white">
+          Learning is an obession. Below are some of the projects that helped me
+          learn and experiment. I have wide range of expericence in BackEnd
+          because of my job role and nature. So, I primarily wanted to learn and
+          explore the modern JS world and faster applications.
+        </p>
+        <div className="flex flex-wrap items-center justify-center p-4 gap-10 mt-10 w-full">
           {projects.map(({ id, title, des, img, iconLists, link }) => (
             <div
               key={id}
-              className="sm:h-[41rem] h-[27rem] lg:min-h-[32.5rem] flex flex-wrap items-center justify-center w-[570px] md:w-[85vw]"
+              className=" sm:h-[41rem] h-[27rem] lg:min-h-[32.5rem] flex flex-wrap items-center 
+              justify-center w-[500px] md:w-[20rem] lg:w-[40rem]"
             >
               <PinContainer title={link} href={link}>
-                <div className="realtive flex items-center justify-center w-[80vw] md:w-[40vw] h-[25vh] md:h-[40vh] overflow-hidden mb-10">
+                <div
+                  className="realtive flex items-center justify-center 
+                w-[80vw] md:w-[40vw] h-[25vh] md:h-[40vh] overflow-hidden mb-10"
+                >
                   <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
                     <Image
                       src="/bg.png"
