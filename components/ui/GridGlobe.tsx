@@ -409,4 +409,4 @@ const GridGlobe = ({ UsedAt }: { UsedAt: string }) => {
     </div>
   );
 };
-export default GridGlobe;
+export default React.memo(GridGlobe);
