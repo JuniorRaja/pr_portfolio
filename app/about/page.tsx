@@ -60,9 +60,9 @@ const About = () => {
   }, []);
   return (
     <div className="max-w-7xl w-full">
-      <section className="w-full py-20 min-h-screen">
+      <section className="w-full py-20 min-h-screen pt-36">
         {/* Header Div */}
-        <div className="w-full h-[auto] mb-10 md:mb-20">
+        <div className="w-full h-[auto] mb-5">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
             Greetings to you
           </p>
@@ -114,10 +114,13 @@ const About = () => {
                   </a>
                 ))}
               </div>
-              <div>
-                <a href="#about">
+              <div className="flex items-center justify-center gap-2">
+                <div>
                   <ShimmerButton title="Work with me" />
-                </a>
+                </div>
+                <div>
+                  <ShimmerButton title="Say Hi" />
+                </div>
               </div>
             </div>
           </div>
@@ -165,18 +168,6 @@ const About = () => {
               <p className="text-4xl font-extrabold mb-2">{experience}</p>
               <p className="text-muted-foreground mb-6">Years</p>
             </div> */}
-          </div>
-          <div className="flex justify-center space-x-4 mb-12">
-            <div>
-              <a href="#Contact">
-                <ShimmerButton title="Say Hiiiii" customCSS="w-[12rem]" />
-              </a>
-            </div>
-            <div>
-              <a href="#about">
-                <ShimmerButton title="Know more" customCSS="w-[12rem]" />
-              </a>
-            </div>
           </div>
           <div className="text-center mb-12" id="skills">
             <h2 className="text-4xl font-bold mb-6">

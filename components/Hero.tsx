@@ -1,3 +1,4 @@
+"use client";
 import ShimmerButton from "./ui/ShimmerButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -10,8 +11,12 @@ const Hero = () => {
     "Full\u00A0Stack\u00A0Developer",
     "Photographer",
   ];
+  const handleClick = () => {
+    window.location.href = "/about";
+  };
+
   return (
-    <div className="pb-20 pt-36">
+    <div className="pt-36">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -80,14 +85,12 @@ const Hero = () => {
             ))}
           </div>
 
-          <a href="#about">
-            {/* <MagicButton
+          {/* <MagicButton
               title={"Know more"}
               icon={<FaLocationArrow />}
               position="right"
             /> */}
-            <ShimmerButton title="Know more" />
-          </a>
+          <ShimmerButton title="Know more" onClickFn={handleClick} />
         </div>
       </div>
     </div>
