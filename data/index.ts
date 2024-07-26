@@ -27,18 +27,19 @@ export const navMenuItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+    title: "See the world through my eyes. Go through the gallery",
+    description: "Photography",
+    className:
+      "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] backdrop-filter backdrop-blur-lg",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/gallerybg.png",
     spareImg: "",
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
+    title: "Places I have been to. My travel diaries",
+    description: "Travel & Explore",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -47,8 +48,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "My Tech Stack",
+    description: "Everyday is a learning day",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -68,8 +69,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
+    title: "Currently building this website. Stay tuned for more updates.",
+    description: "PR Verse",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -79,10 +80,10 @@ export const gridItems = [
   {
     id: 6,
     title: "Do you want to start a project together?",
-    description: "",
+    description: "Let's Collaborate",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
+    titleClassName: "justify-center md:max-w-full max-w-60 text-left",
     img: "",
     spareImg: "",
   },
@@ -338,7 +339,7 @@ export const roadmap = [
   {
     id: "1",
     title: "Assitant Project Manager - Development",
-    text: "rain & monitor Junior Associates’ and provide Knowledge Training about Business process, Coding standards, assign tasks and requirements and track their performance",
+    text: "Train & monitor Junior Associates’ and provide Knowledge Training about Business process, Coding standards, assign tasks and requirements and track their performance",
     date: "Oct 2022 - Mar 2024",
     status: "Previously",
   },
