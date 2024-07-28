@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import GridGlobe from "@/components/ui/GridGlobe";
+// import GridGlobe from "@/components/ui/GridGlobe";
 import { BsGeoAlt } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsMailboxFlag } from "react-icons/bs";
 import ShimmerButton from "@/components/ui/ShimmerButton";
+import dynamic from "next/dynamic";
+const GridGlobe = dynamic(() => import("@/components/ui/GridGlobe"));
 
 const Contact = () => {
   const [selectedOption, setSelectedOption] = useState("");

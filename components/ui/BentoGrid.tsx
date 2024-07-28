@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-
+import dynamic from "next/dynamic";
 // Also install this npm i --save-dev @types/react-lottie
 
 import { cn } from "@/utils/cn";
 
 import { BackgroundGradientAnimation } from "../ui/background-gradient-animation";
-import GridGlobe from "./GridGlobe";
+const GridGlobe = dynamic(() => import("./GridGlobe"));
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
