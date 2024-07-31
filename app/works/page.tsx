@@ -5,7 +5,7 @@ import { PinContainer } from "@/components/ui/3d-pin";
 import { projects, roadmap } from "@/data";
 import { FaLocationArrow } from "react-icons/fa";
 import Image from "next/image";
-import grid from "/public/grid.png";
+import grid from "/public/grid.svg";
 import Tagline from "@/components/ui/Tagline";
 
 const Works = () => {

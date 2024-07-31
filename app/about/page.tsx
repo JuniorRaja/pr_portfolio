@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Image from "next/image";
-import AIAvatar from "/public/AIAvatar-4.png";
+import AIAvatar from "@/public/AIAvatar-4.png";
 import { FlipWords } from "@/components/ui/flip-words";
 import { socialMedia, techStack, words, interests } from "@/data";
 import ShimmerButton from "@/components/ui/ShimmerButton";
+import TravelCards from "@/components/ui/travel-cards";
 
 const About = () => {
   const [age, setAge] = useState<string>("");
@@ -223,6 +224,8 @@ const About = () => {
               </div>
             </div>
           </div> */}
+
+          <TravelCards />
         </div>
       </section>
     </div>
