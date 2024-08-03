@@ -1,16 +1,6 @@
 "use client";
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  createContext,
-  useContext,
-} from "react";
-// import {
-//   IconArrowNarrowLeft,
-//   IconArrowNarrowRight,
-//   IconX,
-// } from "@tabler/icons-react";
+import React from "react";
+import { useEffect, useRef, useState, createContext, useContext } from "react";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
@@ -138,14 +128,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            ➡ Next
+            ⬅ Prev
           </button>
           <button
             className="relative z-40 h-10 w-20 rounded-full bg-gray-100 text-black-200 flex items-center justify-center disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            ⬅ Prev
+            ➡ Next
           </button>
         </div>
       </div>

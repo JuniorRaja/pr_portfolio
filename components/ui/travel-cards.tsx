@@ -1,6 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/cards-carousel";
+import SG from "@/public/travel/sg.jpg";
+import SL from "@/public/travel/sl.jpg";
+import PL from "@/public/travel/pl.jpg";
+import SV from "@/public/travel/sv.jpg";
+import AU from "@/public/travel/au.jpg";
+import CZ from "@/public/travel/cz.jpg";
+import HU from "@/public/travel/hu.jpg";
 
 export default function TravelCards() {
   const cards = data.map((card, index) => (
@@ -20,7 +27,7 @@ export default function TravelCards() {
 const DummyContent = () => {
   return (
     <>
-      {[...new Array(3).fill(1)].map((_, index) => {
+      {[...new Array(1).fill(1)].map((_, index) => {
         return (
           <div
             key={"dummy-content" + index}
@@ -36,8 +43,8 @@ const DummyContent = () => {
               thought.
             </p>
             <Image
-              src="https://assets.aceternity.com/macbook.png"
-              alt="Macbook mockup from Aceternity UI"
+              src={"https://assets.aceternity.com/macbook.png"}
+              alt="Photo of the place"
               height="500"
               width="500"
               className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
@@ -53,44 +60,44 @@ const data = [
   {
     category: "JAN 2023",
     title: "Singapore",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: SG.src,
     content: <DummyContent />,
   },
   {
     category: "JUN 2023",
     title: "Sri Lanka",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: SL.src,
     content: <DummyContent />,
   },
   {
     category: "SEP 2023",
     title: "Poland",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: PL.src,
     content: <DummyContent />,
   },
 
   {
     category: "SEP 23",
     title: "Slovakia",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: SV.src,
     content: <DummyContent />,
   },
   {
     category: "OCT 2023",
     title: "Austria",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: AU.src,
     content: <DummyContent />,
   },
   {
     category: "OCT 2023",
     title: "Czech Republic",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: CZ.src,
     content: <DummyContent />,
   },
   {
     category: "NOV 2023",
     title: "Hungary",
-    src: "https://cdn.jsdelivr.net/gh/JuniorRaja/static/assets/macro/macro_10.webp",
+    src: HU.src,
     content: <DummyContent />,
   },
 ];
