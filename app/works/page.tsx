@@ -187,7 +187,15 @@ const Works = () => {
           })}
         </div>
 
-        <div className="mt-96">
+        <div className="mt-16">
+          <h2 className="text-4xl text-center font-bold my-10">
+            Quick <span className="text-purple">Tools</span>
+          </h2>
+          <p className="text-center text-muted-foreground mb-8 text-white">
+            Tools that I build to ease my daily tasks. One of the many tools I
+            use online is the Word Counter. Rest, I am working on a few more
+            tools that will be added soon.
+          </p>
           <WordCounter />
         </div>
       </section>
