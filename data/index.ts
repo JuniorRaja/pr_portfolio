@@ -1,3 +1,4 @@
+import { HiReceiptPercent } from "react-icons/hi2";
 import * as logoIdx from "../public/techstack";
 
 export const navMenuItems = [
@@ -35,6 +36,7 @@ export const gridItems = [
     titleClassName: "justify-end",
     img: "/gallerybg.webp",
     spareImg: "",
+    href: "/gallery",
   },
   {
     id: 2,
@@ -45,6 +47,7 @@ export const gridItems = [
     titleClassName: "justify-start",
     img: "",
     spareImg: "",
+    href: "/about#travel",
   },
   {
     id: 3,
@@ -55,6 +58,7 @@ export const gridItems = [
     titleClassName: "justify-center",
     img: "",
     spareImg: "/grid.webp",
+    href: "/about#skills",
   },
   {
     id: 4,
@@ -65,6 +69,7 @@ export const gridItems = [
     titleClassName: "justify-start",
     img: "/grid.webp",
     spareImg: "/b4.svg",
+    href: "/works",
   },
 
   {
@@ -76,6 +81,7 @@ export const gridItems = [
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "/b5.svg",
     spareImg: "/grid.webp",
+    href: "/",
   },
   {
     id: 6,
@@ -86,6 +92,7 @@ export const gridItems = [
     titleClassName: "justify-center md:max-w-full max-w-60 text-left",
     img: "",
     spareImg: "",
+    href: "/contact",
   },
 ];
 

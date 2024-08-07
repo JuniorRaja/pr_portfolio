@@ -12,6 +12,7 @@ const GridGlobe = dynamic(() => import("./GridGlobe"));
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
+import Link from "next/link";
 
 export const BentoGrid = ({
   className,
@@ -43,6 +44,7 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  href,
 }: {
   className?: string;
   id: number;
@@ -52,6 +54,7 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
+  href: string;
 }) => {
   const leftLists = ["ReactJS", "Express", "Typescript"];
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
@@ -123,7 +126,11 @@ export const BentoGridItem = ({
           </BackgroundGradientAnimation>
         )}
 
-        <div
+        <Link
+          href={id === 6 ? "" : href}
+          // onClick={() => {
+          //   if (id === 6) return false;
+          // }}
           className={cn(
             titleClassName,
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
@@ -204,7 +211,7 @@ export const BentoGridItem = ({
               />
             </div>
           )}
-        </div>
+        </Link>
       </div>
     </div>
   );

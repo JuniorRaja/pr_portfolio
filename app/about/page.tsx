@@ -225,7 +225,9 @@ const About = () => {
             </div>
           </div> */}
 
-          <TravelCards />
+          <div id="travel">
+            <TravelCards />
+          </div>
         </div>
       </section>
     </div>
