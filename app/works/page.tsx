@@ -7,6 +7,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import Image from "next/image";
 import grid from "/public/grid.svg";
 import Tagline from "@/components/ui/Tagline";
+import WordCounter from "@/components/WordCounter";
 
 const Works = () => {
   const [experience, setExperience] = useState<string>("");
@@ -184,6 +185,10 @@ const Works = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-96">
+          <WordCounter />
         </div>
       </section>
     </div>
