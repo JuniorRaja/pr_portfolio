@@ -33,7 +33,7 @@ export const gridItems = [
       "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] backdrop-filter backdrop-blur-lg bg-black-200",
     imgClassName: "w-full h-full opacity-20",
     titleClassName: "justify-end",
-    img: "/gallerybg.png",
+    img: "/gallerybg.webp",
     spareImg: "",
   },
   {

@@ -2,7 +2,7 @@
 import { socialMedia, footerLinks } from "@/data";
 import Image from "next/image";
 import Waves from "./ui/Waves";
-import footerLogo from "@/public/prlogo-footerx.png";
+import footerLogo from "@/public/prlogo-footer.webp";
 import PRLogo from "@/public/PRLogoW.png";
 import Link from "next/link";
 
