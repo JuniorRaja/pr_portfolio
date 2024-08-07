@@ -35,20 +35,31 @@ const DummyContent = () => {
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                The first rule of Apple club is that you boast about Apple club.
+                Travelling keeps your soul young. <br />
               </span>{" "}
-              Keep a journal, quickly jot down a grocery list, and take amazing
-              class notes. Want to convert those notes to text? No problem.
-              Langotiya jeetu ka mara hua yaar is ready to capture every
-              thought.
+              Every new place you visit, every new culture you experience, every
+              new person you meet, every new food you taste, every new language
+              you learn, every new adventure you embark on, every new memory you
+              create, every new story you share, every new experience you gain,
+              every new lesson you learn, every new perspective you see, every
+              new emotion you feel, every new moment you live, every new journey
+              you take, every new dream you chase, every new goal you achieve,
+              every new challenge you face, every new fear you conquer, every
+              new obstacle you overcome, every new success you celebrate, every
+              new failure you learn from, every new relationship you build,
+              every new connection you make, every new bond you form, every new
+              friendship you cherish, every new love you find, every new heart
+              you touch, every new life you change, every new world you explore,
+              every new universe you create, every new reality you live, every
+              new you you become.
             </p>
-            <Image
+            {/* <Image
               src={"https://assets.aceternity.com/macbook.png"}
               alt="Photo of the place"
               height="500"
               width="500"
               className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
-            />
+            /> */}
           </div>
         );
       })}
