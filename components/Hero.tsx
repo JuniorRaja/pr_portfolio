@@ -57,13 +57,19 @@ const Hero = () => {
             Manager by day. Developer by Heart
           </p>
 
-          <div className="h-auto w-[50rem] flex justify-center items-center px-4 mt-16">
+          <div className="h-auto md:w-[50rem] flex justify-center items-center px-4 mt-16">
             <div className="text-lg mx-auto font-normal text-justify text-blue-100 dark:text-blue-100">
-              Hi, I&apos;m Prasanna Rajedran. I am a
-              <FlipWords words={words} /> <br />
-              from Chennai, India. I build robust web applications, make
-              managemental decisions and take photos of incredible patterns &
-              landscapes..
+              <div className="flex flex-col md:flex-row">
+                <div>Hi, I&apos;m Prasanna Rajedran. I am a</div>
+                <div className="text-center">
+                  <FlipWords words={words} />
+                </div>
+              </div>
+              <div>
+                from Chennai, India. I build robust web applications, make
+                managemental decisions and take photos of incredible patterns &
+                landscapes..
+              </div>
             </div>
           </div>
 
