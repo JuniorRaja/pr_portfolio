@@ -59,6 +59,11 @@ const About = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleClick = () => {
+    window.location.href = "/contact";
+  };
+
   return (
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen pt-36">
@@ -117,10 +122,10 @@ const About = () => {
               </div>
               <div className="flex items-center justify-center gap-2">
                 <div>
-                  <ShimmerButton title="Work with me" />
+                  <ShimmerButton title="Work with me" onClickFn={handleClick} />
                 </div>
                 <div>
-                  <ShimmerButton title="Say Hi" />
+                  <ShimmerButton title="Say Hi" onClickFn={handleClick} />
                 </div>
               </div>
             </div>
