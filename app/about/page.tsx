@@ -166,7 +166,7 @@ const About = () => {
           <div>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">My Age</h2>
-              <p className="text-4xl font-extrabold mb-2">{age}</p>
+              <p className="font-sans text-4xl font-extrabold mb-2">{age}</p>
               <p className="text-muted-foreground mb-6">Years</p>
             </div>
             {/* <div className="text-center mb-12">

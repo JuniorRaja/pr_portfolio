@@ -128,7 +128,9 @@ const Works = () => {
             and learning new things everyday.
           </p>
           <div className="text-center mb-12">
-            <p className="text-4xl font-extrabold mb-2">{experience}</p>
+            <p className="font-sans text-4xl font-extrabold mb-2">
+              {experience}
+            </p>
             <p className="text-muted-foreground mb-6">
               Years of Professional Experience
             </p>
