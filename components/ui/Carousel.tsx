@@ -94,7 +94,7 @@ const Carousel: React.FC = () => {
           >
             <div className={styles.content}>
               {/* <div className={styles.blurbackdrop}> </div> */}
-              {/* <div className="absolute top-1/2 left-[100px] -translate-y-1/2 w-[300px] text-left text-[#eee] font-sans hidden"> */}
+              {/* <div className="absolute top-1/2 left-[100px] -translate-y-1/2 w-[300px] text-left text-[#eee] hidden"> */}
               <div className={styles.name}>{item.name}</div>
               <div>{item.des}</div>
               {/* <button>See More</button> */}
