@@ -28,7 +28,7 @@ const Works = () => {
       const output: string = `${years.slice(-2)}.${decimal}`;
 
       setExperience(output);
-    }, 1000);
+    }, 10);
 
     return () => clearInterval(interval);
   }, []);

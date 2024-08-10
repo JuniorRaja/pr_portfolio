@@ -33,10 +33,10 @@ const DummyContent = () => {
             key={"dummy-content" + index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
-            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl max-w-3xl mx-auto">
-              <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                Travelling keeps your soul young. <br />
-              </span>{" "}
+            <h1 className="font-bold text-2xl text-neutral-700 dark:text-neutral-200 text-center mb-2">
+              Travelling keeps your soul young.
+            </h1>{" "}
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-xl max-w-3xl mx-auto text-justify">
               Every new place you visit, every new culture you experience, every
               new person you meet, every new food you taste, every new language
               you learn, every new adventure you embark on, every new memory you

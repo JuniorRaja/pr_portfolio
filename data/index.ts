@@ -151,7 +151,7 @@ export const projects = [
     link: "https://prmetaversesite.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Bank App Landing Page",
     des: "Modern landing page for a fictional Bank company, built with React and Tailwind CSS.",
     img: "/p6.jpg",
