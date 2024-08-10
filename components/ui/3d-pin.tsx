@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 export const PinContainer: React.FC<{
   children: React.ReactNode;
@@ -18,21 +17,25 @@ export const PinContainer: React.FC<{
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
   };
+
   const onMouseLeave = () => {
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
   };
 
+  const handleClick = (link: string) => {
+    window.open(link, "_blank");
+  };
+
   return (
-    // hydration error if a is changed to Link
-    <a
+    // hydration error if a tags are nested. So, using div with onClick
+    <div
       className={cn(
         "relative group/pin z-40  cursor-pointer",
         containerClassName
       )}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      href={href || "/"}
-      target="_blank"
+      onClick={() => handleClick(href || "/")}
     >
       <div
         style={{
@@ -51,7 +54,7 @@ export const PinContainer: React.FC<{
         </div>
       </div>
       <PinPerspective title={title} href={href || "/"} />
-    </a>
+    </div>
   );
 };
 
