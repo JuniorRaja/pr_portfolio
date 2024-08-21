@@ -8,6 +8,7 @@ import Image from "next/image";
 import grid from "/public/grid.svg";
 import Tagline from "@/components/ui/Tagline";
 import WordCounter from "@/components/WordCounter";
+import JsonFormatter from "@/components/ui/json-formatter";
 import { ScrollBeam } from "@/components/ui/scrollbeam";
 
 const Works = () => {
@@ -203,6 +204,8 @@ const Works = () => {
               tools that will be added soon.
             </p>
             <WordCounter />
+            <br />
+            <JsonFormatter />
           </div>
         </section>
       </ScrollBeam>
