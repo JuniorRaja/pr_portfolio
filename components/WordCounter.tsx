@@ -44,86 +44,89 @@ const WordCounter: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row w-full p-4 mx-auto text-white">
-      <div className="sm:w-full lg:w-2/3 p-4 bg-gray-800 rounded-md mb-5 lg:mb-0">
-        <textarea
-          placeholder="Type or paste your text here..."
-          className="w-full h-80 lg:h-64 p-3 mt-4 bg-gray-700 border border-gray-600 rounded-md text-white"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        {/* <div className="flex justify-end mt-2">
+    <div>
+      <h1 className="text-2xl font-bold mb-4 text-center">Words Counter</h1>
+      <div className="flex flex-col md:flex-row w-full p-4 mx-auto text-white">
+        <div className="sm:w-full md:w-2/3 p-4 bg-gray-800 rounded-md lg:mb-0">
+          <textarea
+            placeholder="Type or paste your text here..."
+            className="w-full h-80 md:h-70 lg:h-64 p-3 mt-4 bg-gray-700 border border-gray-600 rounded-md text-white"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          {/* <div className="flex justify-end mt-2">
           <Button variant="ghost" className="text-white">
-            <TrashIcon className="w-5 h-5" />
+          <TrashIcon className="w-5 h-5" />
           </Button>
-        </div> */}
-      </div>
-      <div className="sm:w-full lg:w-1/3 p-4 bg-gray-800 lg:ml-4 rounded-md ">
-        <div className="grid grid-cols-2 gap-4 md:gap-6">
-          <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
-            {hoverComponent("")}
-            <div className="relative text-center py-1">
-              <div className="text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
-                Words
-              </div>
-              <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
-                {wordCount}
-              </h4>
-            </div>
-          </div>
-          <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
-            {hoverComponent("")}
-            <div className="relative text-center py-1">
-              <div className="text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
-                Characters
-              </div>
-              <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
-                {charCount}
-              </h4>
-            </div>
-          </div>
-          <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
-            {hoverComponent("")}
-            <div className="relative text-center py-1">
-              <div className="text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
-                Sentences
-              </div>
-              <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
-                {sentenceCount}
-              </h4>
-            </div>
-          </div>
-          <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
-            {hoverComponent("")}
-            <div className="relative text-center py-1">
-              <div className="text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
-                Paragraphs
-              </div>
-              <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
-                {paragraphCount}
-              </h4>
-            </div>
-          </div>
+          </div> */}
         </div>
-        <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150 mt-5">
-          {hoverComponent("")}
-          <div className="relative text-center py-1">
-            <div className="text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
-              Reading Time
+        <div className="sm:w-full md:w-1/3 p-4 bg-gray-800 md:ml-4 rounded-md ">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
+            <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
+              {hoverComponent("")}
+              <div className="relative text-center py-1">
+                <div className="text-xs md:text-[10px] lg:text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
+                  Words
+                </div>
+                <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
+                  {wordCount}
+                </h4>
+              </div>
             </div>
-            <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
-              {readingTime} s
-            </h4>
+            <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
+              {hoverComponent("")}
+              <div className="relative text-center py-1">
+                <div className="text-xs md:text-[10px] lg:text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
+                  Characters
+                </div>
+                <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
+                  {charCount}
+                </h4>
+              </div>
+            </div>
+            <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
+              {hoverComponent("")}
+              <div className="relative text-center py-1">
+                <div className="text-xs md:text-[10px] lg:text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
+                  Sentences
+                </div>
+                <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
+                  {sentenceCount}
+                </h4>
+              </div>
+            </div>
+            <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150">
+              {hoverComponent("")}
+              <div className="relative text-center py-1">
+                <div className="text-xs md:text-[10px] lg:text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
+                  Paragraphs
+                </div>
+                <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
+                  {paragraphCount}
+                </h4>
+              </div>
+            </div>
           </div>
-        </div>
-        {/* <div className="flex justify-between mt-4">
+          <div className="group relative p-3 md:p-2 lg:p-1 bg-slate-900 rounded-xl transition duration-150 mt-5">
+            {hoverComponent("")}
+            <div className="relative text-center py-1">
+              <div className="text-xs uppercase text-gray-400 font-semibold tracking-wider mb-4">
+                Reading Time
+              </div>
+              <h4 className="text-xl lg:text-2xl font-extrabold text-gray-100">
+                {readingTime} s
+              </h4>
+            </div>
+          </div>
+          {/* <div className="flex justify-between mt-4">
           <Button variant="outline" className="text-green-500 border-green-500">
-            Paraphrase text
+          Paraphrase text
           </Button>
           <Button variant="outline" className="text-red-500 border-red-500">
-            Check grammar
+          Check grammar
           </Button>
-        </div> */}
+          </div> */}
+        </div>
       </div>
     </div>
   );
