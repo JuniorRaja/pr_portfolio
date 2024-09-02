@@ -9,13 +9,13 @@ export const navMenuItems = [
   },
   {
     id: "1",
-    title: "Gallery",
-    url: "/gallery",
+    title: "Works",
+    url: "/works",
   },
   {
     id: "2",
-    title: "Works",
-    url: "/works",
+    title: "Gallery",
+    url: "/gallery",
   },
   {
     id: "3",

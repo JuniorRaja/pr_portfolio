@@ -31,7 +31,13 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
         mx-auto gap-4 relative`}
     >
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "h-[20rem] md:h-[30rem]")}>
+        <div
+          key={i}
+          className={cn(
+            card.className,
+            "h-[20rem] md:h-[30rem] cursor-pointer"
+          )}
+        >
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(

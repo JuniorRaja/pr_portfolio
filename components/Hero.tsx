@@ -43,7 +43,7 @@ const Hero = () => {
         <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8"></p>
       </div>
 
-      <div className="flex justify-center relative my-36 z-10">
+      <div className="flex justify-center relative z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[70vw] flex flex-col items-center justify-center ">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
             Hi, welcome to PR Verse
@@ -58,14 +58,14 @@ const Hero = () => {
           </p>
 
           <div className="h-auto md:w-[50rem] flex justify-center items-center px-4 mt-16">
-            <div className="text-lg mx-auto font-normal text-justify text-blue-100 dark:text-blue-100">
+            <div className="text-lg mx-auto font-normal text-center justify-center text-blue-100 dark:text-blue-100">
               <div className="flex flex-col md:flex-row">
                 <div>Hi, I&apos;m Prasanna Rajedran. I am a</div>
                 <div className="text-center">
                   <FlipWords words={words} />
                 </div>
               </div>
-              <div>
+              <div className="text-center">
                 from Chennai, India. I build robust web applications, make
                 managemental decisions and take photos of incredible patterns &
                 landscapes..
