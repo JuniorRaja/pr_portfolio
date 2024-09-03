@@ -56,8 +56,8 @@ export const BentoGridItem = ({
   spareImg?: string;
   href: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["ReactJS", "Express", "Typescript", "AWS"];
+  const rightLists = [".NET", "MS SQL", "Web API", "Azure"];
 
   const [copied, setCopied] = useState(false);
 
@@ -137,7 +137,7 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className=" font-extralight md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="font-extralight md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}

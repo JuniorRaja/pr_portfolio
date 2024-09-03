@@ -65,7 +65,7 @@ const Hero = () => {
                   <FlipWords words={words} />
                 </div>
               </div>
-              <div className="text-center">
+              <div className="sm:text-justify text-center">
                 from Chennai, India. I build robust web applications, make
                 managemental decisions and take photos of incredible patterns &
                 landscapes..
