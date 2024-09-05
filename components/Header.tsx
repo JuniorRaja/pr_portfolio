@@ -1,26 +1,31 @@
 "use client";
-
-// import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { navMenuItems } from "@/data";
 import PRLogoW from "../public/PRLogoW.png";
 import MenuSvg from "./ui/MenuSvg";
 import Image from "next/image";
 import Link from "next/link";
 
-const Header = () => {
-  //   const pathName = useLocation();
+interface NavbarItem {
+  id: number;
+  title: string;
+  url: string;
+  onlyMobile: boolean;
+}
 
+interface NavbarProps {
+  navItems: NavbarItem[];
+}
+
+const Header = ({ navItems }: NavbarProps) => {
+  const [activeNav, setActiveNav] = useState<number>(99);
   const [openNav, setOpenNav] = useState<boolean>(false);
+
   const toggleNav = () => {
-    if (openNav) {
-      setOpenNav(false);
-    } else {
-      setOpenNav(true);
-    }
+    setOpenNav(!openNav);
   };
 
-  const handleClick = () => {
+  const handleClick = (id: number) => () => {
+    setActiveNav(id);
     setOpenNav(false);
   };
 
@@ -59,15 +64,16 @@ const Header = () => {
             } w-full h-full`}
             // Container for navigation items, layout changes based on screen size
           >
-            {navMenuItems.map((item) => (
+            {navItems.map((item) => (
               <a
                 key={item.id}
                 href={item.url}
-                onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase text-white transition-colors hover:text-color-1 ${
-                  item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
-                lg:leading-5 lg:hover:text-white xl:px-12 z-2 lg:text-white`}
+                onClick={handleClick(item.id)}
+                className={`block relative font-code text-2xl uppercase text-white transition-colors hover:text-color-1 
+                    ${item.onlyMobile ? "lg:hidden" : ""} 
+                    px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
+                    lg:leading-5 lg:hover:text-white xl:px-12 z-2 lg:text-white`}
+                //${activeNav === item.id ? "border border-b-2" : ""}  highlihgt active nav item
                 // Navigation link with dynamic styling based on item properties
               >
                 {item.title}
