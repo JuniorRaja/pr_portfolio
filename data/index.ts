@@ -1,29 +1,6 @@
 import { HiReceiptPercent } from "react-icons/hi2";
 import * as logoIdx from "../public/techstack";
 
-export const navMenuItems = [
-  {
-    id: "0",
-    title: "About PR",
-    url: "/about",
-  },
-  {
-    id: "1",
-    title: "Works",
-    url: "/works",
-  },
-  {
-    id: "2",
-    title: "Gallery",
-    url: "/gallery",
-  },
-  {
-    id: "3",
-    title: "Contact",
-    url: "/contact",
-    onlyMobile: false,
-  },
-];
 
 export const gridItems = [
   {
