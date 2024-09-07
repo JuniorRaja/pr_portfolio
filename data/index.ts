@@ -1,6 +1,4 @@
-import { HiReceiptPercent } from "react-icons/hi2";
 import * as logoIdx from "../public/techstack";
-
 
 export const gridItems = [
   {
