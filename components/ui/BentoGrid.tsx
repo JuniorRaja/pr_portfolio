@@ -126,8 +126,8 @@ export const BentoGridItem = ({
           </BackgroundGradientAnimation>
         )}
 
-        <Link
-          href={id === 6 ? "" : href}
+        <div
+          //href={id === 6 ? "" : href}
           // onClick={() => {
           //   if (id === 6) return false;
           // }}
@@ -143,7 +143,7 @@ export const BentoGridItem = ({
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
           <div className={` text-lg lg:text-3xl max-w-96 font-bold z-10`}>
-            {title}
+            <Link href={id === 6 ? "" : href}>{title}</Link>
           </div>
 
           {/* for the github 3d globe */}
@@ -209,7 +209,7 @@ export const BentoGridItem = ({
               />
             </div>
           )}
-        </Link>
+        </div>
       </div>
     </div>
   );

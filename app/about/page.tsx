@@ -144,23 +144,23 @@ const About = () => {
         </div>
 
         <div className="text-foreground py-12 mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 w-full lg:w-[55%] mx-auto">
             {/* <h1 className="text-5xl font-extrabold mb-6">Greetings!</h1> */}
             <p className="text-xl mb-6">
-              Hi, my name is <span className="text-purple">Prasanna</span> and I
-              am a{" "}
-              <span className="font-bold text-purple">jack of all trades</span>{" "}
-              based in Chennai, India.
+              Hi, I&apos;m <span className="text-purple">Prasanna</span>,
+              versatile & dynamic{" "}
+              {/* <span className="font-bold text-purple">jack of all trades</span>{" "} */}
+              CS enthusiast based in Chennai, India.
             </p>
             <p className="text-muted-foreground mb-6">
-              I am a creative professional with a passion for design and
-              technology. I have a strong background in graphic design, web
-              development, and photography. I am also a full-stack developer
-              with experience in building web applications and websites.
+              With expertise in leading teams, web development, design, and
+              photography, I blend technology and creativity to craft engaging
+              and industry standard digital experiences.
             </p>
             <p className="text-muted-foreground">
-              Other than development, I am also a photographer and a travel
-              enthusiast.
+              As a full-stack developer and passionate traveler, I bring a
+              unique perspective to every project. Let's build something
+              extraordinary together.
             </p>
           </div>
           <div>
@@ -169,11 +169,6 @@ const About = () => {
               <p className="font-sans text-4xl font-extrabold mb-2">{age}</p>
               <p className="text-muted-foreground mb-6">Years</p>
             </div>
-            {/* <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">My Experience</h2>
-              <p className="text-4xl font-extrabold mb-2">{experience}</p>
-              <p className="text-muted-foreground mb-6">Years</p>
-            </div> */}
           </div>
           <div className="text-center mb-12" id="skills">
             <h2 className="text-4xl font-bold mb-6">

@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Header from "@/components/Header";
 import PRLogoW from "../public/PRLogoW.png";
 import PRLogoB from "../public/PRLogoB.png";
+import ReactReduxProvider from "@/store/ReduxProvider";
 import { fetchNavbarItems } from "./lib/fetchNavbarItems";
 const customFont = Raleway({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={customFont.className}>
+        <ReactReduxProvider>
           <ThemeProvider attribute="class" defaultTheme="dark">
             <main className="relative bg-slate-950 flex justify-center items-center overflow-hidden flex-col mx-auto sm:px-10 px-5">
               <Header navItems={navItems} />
@@ -37,6 +39,7 @@ export default async function RootLayout({
               <Footer />
             </main>
           </ThemeProvider>
+        </ReactReduxProvider>
       </body>
     </html>
   );

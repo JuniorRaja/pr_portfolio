@@ -7,8 +7,14 @@ import { BsMailboxFlag } from "react-icons/bs";
 import ShimmerButton from "@/components/ui/ShimmerButton";
 import dynamic from "next/dynamic";
 const GridGlobe = dynamic(() => import("@/components/ui/GridGlobe"));
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 const Contact = () => {
+  const primaryColor = useSelector(
+    (state: RootState) => state.color.primaryColor
+  );
+
   const [selectedOption, setSelectedOption] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -64,7 +70,7 @@ const Contact = () => {
           I am already excited
         </p>
         <h1 className="heading">
-          Let&apos;s <span className="text-purple">Connect</span>
+          Let&apos;s <span style={{ color: primaryColor }}>Connect</span>
         </h1>
 
         <div className="flex flex-col lg:flex-row bg-white bg-opacity-10 my-6 text-card-foreground rounded-xl overflow-hidden">
