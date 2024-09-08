@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import Footer from "../components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import PRLogoW from "../public/PRLogoW.png";
 import PRLogoB from "../public/PRLogoB.png";
 import ReactReduxProvider from "@/store/ReduxProvider";
-import { fetchNavbarItems } from "./lib/fetchNavbarItems";
+import { fetchNavbarItems } from "../lib/fetchNavbarItems";
 const customFont = Raleway({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

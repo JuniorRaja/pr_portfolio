@@ -11,7 +11,6 @@ import TravelCards from "@/components/ui/travel-cards";
 
 const About = () => {
   const [age, setAge] = useState<string>("");
-  const [experience, setExperience] = useState<string>("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,26 +35,6 @@ const About = () => {
 
       setAge(output);
     }, 10);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const birthDate: Date = new Date("2019-06-05");
-      const currentDate: Date = new Date();
-
-      const diffInMs: number = Number(
-        currentDate.getTime() - birthDate.getTime()
-      );
-      const msPerYear: number = 365.25 * 24 * 60 * 60 * 1000;
-      const yearsDecimal: number = diffInMs / msPerYear;
-      const formattedAge: string = yearsDecimal.toFixed(9);
-      const [years, decimal] = formattedAge.split(".");
-      const output: string = `${years.slice(-2)}.${decimal}`;
-
-      setExperience(output);
-    }, 1000);
 
     return () => clearInterval(interval);
   }, []);

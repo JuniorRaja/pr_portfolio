@@ -1,20 +1,11 @@
 "use client";
 import Carousel from "@/components/ui/Carousel";
 import { useState, useEffect } from "react";
-import { fetchAlbumsList } from "./../lib/fetchAlbumsList";
-
-interface Album {
-  id: number;
-  name: string;
-  likes: number;
-  views: number;
-  img: string;
-  route: string;
-  des: string;
-}
+import { fetchAlbumsList } from "../../lib/fetchAlbumsList";
+import { AlbumItem } from "@/types/types";
 
 const Gallery = () => {
-  const [albums, setAlbums] = useState<Album[]>([]);
+  const [albums, setAlbums] = useState<AlbumItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -32,6 +23,7 @@ const Gallery = () => {
 
     getAlbums();
   }, []);
+
   return (
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen pt-36">

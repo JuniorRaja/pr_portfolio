@@ -1,12 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import PRLogoW from "../public/PRLogoW.png";
-import MenuSvg from "./ui/MenuSvg";
+import PRLogoW from "@/public/PRLogoW.png";
+import MenuSvg from "../ui/MenuSvg";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { setPrimaryColor } from "@/store/colorSlice";
+import { NavBarItem, NavBarList } from "@/types/types";
 
 // const Skeleton = ({ classNames }: { classNames?: string }) => {
 //   return (
@@ -19,18 +20,7 @@ import { setPrimaryColor } from "@/store/colorSlice";
 //   );
 // };
 
-interface NavbarItem {
-  id: number;
-  title: string;
-  url: string;
-  onlyMobile: boolean;
-}
-
-interface NavbarProps {
-  navItems: NavbarItem[];
-}
-
-const Header = ({ navItems }: NavbarProps) => {
+const Header = ({ navItems }: NavBarList) => {
   const dispatch = useDispatch();
   const [activeNav, setActiveNav] = useState<number>(99);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -105,7 +95,7 @@ const Header = ({ navItems }: NavbarProps) => {
             } w-full h-full`}
             // Container for navigation items, layout changes based on screen size
           >
-            {navItems.map((item) => (
+            {navItems.map((item: NavBarItem) => (
               <a
                 key={item.id}
                 href={item.url}
