@@ -10,6 +10,7 @@ import Tagline from "@/components/ui/Tagline";
 import WordCounter from "@/components/WordCounter";
 import JsonFormatter from "@/components/ui/json-formatter";
 import { ScrollBeam } from "@/components/ui/scrollbeam";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 const Works = () => {
   const [experience, setExperience] = useState<string>("");
@@ -37,11 +38,12 @@ const Works = () => {
   return (
     <div className="max-w-7xl w-full">
       <ScrollBeam>
-        <section className="w-full py-20 min-h-screen pt-36">
-          <h1 className="text-4xl font-bold text-center mb-4 text-white">
-            My <span className="text-purple">Works</span>
-          </h1>
-          <p className="text-center text-muted-foreground mb-8 text-white">
+        <section className="w-full py-20 min-h-screen mt-5 md:pt-36">
+          <SectionHeader
+            words={["My", "Works"]}
+            tagline="Projects | Skills | Career"
+          />
+          <p className="text-center text-muted-foreground mb-8 md:mx-16 text-white">
             Learning is an obession. Below are some of the projects that helped
             me learn and experiment. I have wide range of expericence in BackEnd
             because of my job role and nature. So, I primarily wanted to learn

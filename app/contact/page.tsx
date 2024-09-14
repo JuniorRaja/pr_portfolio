@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 const GridGlobe = dynamic(() => import("@/components/ui/GridGlobe"));
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 const Contact = () => {
   const primaryColor = useSelector(
@@ -65,13 +66,14 @@ const Contact = () => {
 
   return (
     <div className="max-w-7xl w-full">
-      <section className="w-full py-20 min-h-screen pt-36">
-        <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
-          I am already excited
-        </p>
-        <h1 className="heading">
+      <section className="w-full py-20 min-h-screen mt-5 md:pt-36">
+        {/* <h1 className="heading">
           Let&apos;s <span style={{ color: primaryColor }}>Connect</span>
-        </h1>
+        </h1> */}
+        <SectionHeader
+          words={["Contact", "Me"]}
+          tagline="I am already excited"
+        />
 
         <div className="flex flex-col lg:flex-row bg-white bg-opacity-10 my-6 text-card-foreground rounded-xl overflow-hidden">
           <div className="w-full lg:w-1/2 bg-cover bg-center">

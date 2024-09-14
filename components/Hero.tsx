@@ -43,7 +43,7 @@ const Hero = () => {
         <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8"></p>
       </div>
 
-      <div className="flex justify-center relative z-10">
+      <div className="flex justify-center relative z-10 md:my-12 lg:my-24">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[70vw] flex flex-col items-center justify-center ">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
             Hi, welcome to PR Verse

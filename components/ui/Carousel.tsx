@@ -1,18 +1,9 @@
 import React, { useRef } from "react";
 import styles from "./Carousel.module.css";
 import Link from "next/link";
+import { AlbumItem } from "@/types/types";
 
-interface Album {
-  id: number;
-  name: string;
-  likes: number;
-  views: number;
-  img: string; // URL
-  route: string;
-  des: string;
-}
-
-const Carousel: React.FC<{ albums: Album[] }> = ({ albums }) => {
+const Carousel: React.FC<{ albums: AlbumItem[] }> = ({ albums }) => {
   const slideRef = useRef<HTMLDivElement>(null);
 
   const handleNextClick = () => {

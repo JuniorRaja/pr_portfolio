@@ -1,8 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export interface ColorState {
-  primaryColor: string;
-}
+import { ColorState } from "@/types/types";
 
 const initialState: ColorState = {
   primaryColor: "#8B5CF6", // Default purple color
