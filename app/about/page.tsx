@@ -8,6 +8,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { socialMedia, techStack, words, interests } from "@/data";
 import ShimmerButton from "@/components/ui/ShimmerButton";
 import TravelCards from "@/components/ui/travel-cards";
+import SectionHeader from "@/components/layout/SectionHeader";
 
 const About = () => {
   const [age, setAge] = useState<string>("");
@@ -45,27 +46,9 @@ const About = () => {
 
   return (
     <div className="max-w-7xl w-full">
-      <section className="w-full py-20 min-h-screen pt-36">
+      <section className="w-full py-20 min-h-screen mt-5 md:pt-36">
         {/* Header Div */}
-        <div className="w-full h-[auto] mb-5">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-[80] mb-5">
-            Greetings to you
-          </p>
-
-          <Spotlight
-            className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-            fill="white"
-          />
-          <Spotlight
-            className="top-25 left-full h-[80vh] w-[50vw]"
-            fill="purple"
-          />
-          <Spotlight className="top-28 left-80 h-[80vh] w-[50vh]" fill="blue" />
-
-          <h1 className="heading">
-            About <span className="text-purple">PR</span>
-          </h1>
-        </div>
+        <SectionHeader words={["About", "PR"]} tagline="Greeting to you" />
         {/* body div */}
         <div className="h-auto flex  flex-col-reverse md:flex-row items-center justify-between mx-2 ">
           <div className="md:mr-4 md:w-[50%]">
