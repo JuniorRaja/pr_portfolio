@@ -11,6 +11,7 @@ import WordCounter from "@/components/WordCounter";
 import JsonFormatter from "@/components/ui/json-formatter";
 import { ScrollBeam } from "@/components/ui/scrollbeam";
 import SectionHeader from "@/components/layout/SectionHeader";
+import GithubStats from "@/components/githubstats";
 
 const Works = () => {
   const [experience, setExperience] = useState<string>("");
@@ -195,7 +196,7 @@ const Works = () => {
               );
             })}
           </div>
-
+          {/* Tools */}
           <div className="mt-16">
             <h2 className="text-4xl text-center font-bold my-10">
               Quick <span className="text-purple">Tools</span>
@@ -206,6 +207,8 @@ const Works = () => {
               tools that will be added soon.
             </p>
             <WordCounter />
+            <br />
+            <GithubStats />
             <br />
             <JsonFormatter />
           </div>

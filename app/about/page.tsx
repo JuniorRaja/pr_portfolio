@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Spotlight } from "@/components/ui/Spotlight";
 import Image from "next/image";
 import AIAvatar from "@/public/AIAvatar-4.png";
 import { FlipWords } from "@/components/ui/flip-words";
