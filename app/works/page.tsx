@@ -11,7 +11,7 @@ import WordCounter from "@/components/WordCounter";
 import JsonFormatter from "@/components/ui/json-formatter";
 import { ScrollBeam } from "@/components/ui/scrollbeam";
 import SectionHeader from "@/components/layout/SectionHeader";
-import GithubStats from "@/components/githubstats";
+import Component from "@/components/github-stats";
 
 const Works = () => {
   const [experience, setExperience] = useState<string>("");
@@ -207,10 +207,13 @@ const Works = () => {
               tools that will be added soon.
             </p>
             <WordCounter />
-            <br />
-            <GithubStats />
+
             <br />
             <JsonFormatter />
+            <br />
+            <br />
+            {/* <GithubStats /> */}
+            <Component />
           </div>
         </section>
       </ScrollBeam>
