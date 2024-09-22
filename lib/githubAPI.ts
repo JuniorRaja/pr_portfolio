@@ -1,5 +1,10 @@
 //GQL API end points
 import { QUERY_GET_USER_DETAILS } from "@/graphql/query";
+import {
+  iGitHubUserInfo,
+  iGitHubUserStatus,
+  iGutHubStatistics,
+} from "@/types/types_githubAPI";
 
 // User Status Interface
 interface UserStatus {
@@ -113,25 +118,39 @@ export const fetchGitHubDetails = async (username: string) =>
     }
 
     const apiRes = data.data.user;
-    console.log("apiRes: ", apiRes);
+    console.log("apiRes from fetchGitHubDetails: ", apiRes);
+    console.log("rateLimit details: ", data.data.rateLimit);
+
     //Prepare the result data
-    const userStatusDet: UserStatus = {
+    const userStatus: iGitHubUserStatus = {
       emoji: apiRes.status?.emoji?.toString() ?? "",
       message: apiRes.status?.message,
       indicatesLimitedAvailability: apiRes.status?.indicatesLimitedAvailability,
     };
 
-    const userDet: User = {
+    const userDetails: iGitHubUserInfo = {
       id: apiRes.id,
       login: apiRes.login,
       name: apiRes.name,
-      bio: apiRes.bio,
+      bio: apiRes.bio ?? "",
       company: apiRes.company ?? "",
       location: apiRes.location ?? "",
       email: apiRes.email ?? "",
       websiteUrl: apiRes.websiteUrl ?? "",
       twitterUsername: apiRes.twitterUsername ?? "",
       avatarUrl: apiRes.avatarUrl,
+      isBountyHunter: apiRes.isBountyHunter,
+      isCampusExpert: apiRes.isCampusExpert,
+      isDeveloperProgramMember: apiRes.isDeveloperProgramMember,
+      isEmployee: apiRes.isEmployee,
+      isHireable: apiRes.isHireable,
+      isSiteAdmin: apiRes.isSiteAdmin,
+      isViewer: apiRes.isViewer,
+
+      status: apiRes.status && userStatus,
+    };
+
+    const userStatistics: iGutHubStatistics = {
       createdAt: apiRes.createdAt
         ? new Date(apiRes.createdAt).toLocaleString("en-US", {
             month: "short",
@@ -144,16 +163,8 @@ export const fetchGitHubDetails = async (username: string) =>
             year: "2-digit",
           })
         : "",
-      isBountyHunter: apiRes.isBountyHunter,
-      isCampusExpert: apiRes.isCampusExpert,
-      isDeveloperProgramMember: apiRes.isDeveloperProgramMember,
-      isEmployee: apiRes.isEmployee,
-      isHireable: apiRes.isHireable,
-      isSiteAdmin: apiRes.isSiteAdmin,
-      isViewer: apiRes.isViewer,
       followers: apiRes.followers.totalCount,
       following: apiRes.following.totalCount,
-      status: userStatusDet,
       //gists: apiRes.gists.totalCount,
       starredRepositories: apiRes.starredRepositories.totalCount,
       watching: apiRes.watching.totalCount,
@@ -165,5 +176,10 @@ export const fetchGitHubDetails = async (username: string) =>
       repositories: apiRes.repositories.totalCount,
     };
 
-    return userDet;
+    const outputobj = {
+      userDetails,
+      userStatistics,
+    };
+
+    return outputobj;
   };

@@ -51,6 +51,19 @@ const Works = () => {
             and explore the modern JS world and faster applications.
           </p>
 
+          {/* Card Design for projects - later
+          <div className="grid grid-rows-3 grid-flow-col gap-4 px-4 py-4 leading-10">
+            <div className="p-4 w-full bg-fuchsia-900 rounded-xl row-span-3">
+              &nbsp;
+            </div>
+            <div className="p-4 w-full bg-fuchsia-800 rounded-xl col-span-2">
+              &nbsp;
+            </div>
+            <div className="p-4 w-full bg-fuchsia-700 rounded-xl row-span-2 col-span-2">
+              &nbsp;
+            </div>
+          </div> */}
+
           {/* Projects */}
           <div className="flex flex-wrap items-center justify-center p-4 mt-10 w-full">
             {projects.map(({ id, title, des, img, iconLists, link }) => (

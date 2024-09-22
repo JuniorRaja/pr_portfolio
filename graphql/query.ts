@@ -68,6 +68,13 @@ export const QUERY_GET_USER_DETAILS = `
       totalCount
     }
   }
+  rateLimit{
+    cost
+    resetAt
+    used
+    remaining
+    nodeCount
+  }
 }
   `;
 

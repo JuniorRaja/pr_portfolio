@@ -78,6 +78,8 @@ const config = {
       },
       boxShadow: {
         glow: "0 0 15px rgba(255, 255, 255, 0.8)",
+        "glow-green": "0 0 10px 2px rgba(34, 197, 94, 0.6)", // green glow
+        "glow-red": "0 0 10px 2px rgba(239, 68, 68, 0.6)", // red glow
       },
       borderRadius: {
         lg: "var(--radius)",

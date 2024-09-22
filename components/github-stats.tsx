@@ -16,10 +16,29 @@ import {
   Book,
   Code,
 } from "lucide-react";
+import {
+  ShieldCheck,
+  GraduationCap,
+  Briefcase,
+  UserCheck,
+  Lock,
+} from "lucide-react";
 import Image from "next/image";
-import { fetchGitHubDetails, User } from "@/lib/githubAPI";
-import { FaStar, FaCodeBranch, FaExclamationCircle } from "react-icons/fa";
+import { fetchGitHubDetails } from "@/lib/githubAPI";
+import { FaCodeBranch } from "react-icons/fa";
+import { FaTwitter, FaGlobe, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaShieldAlt,
+  FaGraduationCap,
+  FaCode,
+  FaBriefcase,
+  FaUserCheck,
+  FaLock,
+  FaEye,
+} from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
 import ErrorComponent from "./github/error";
+import { iGitHubUserInfo } from "@/types/types_githubAPI";
 
 const getIconClass = (language: string) => {
   switch (language) {
@@ -42,22 +61,7 @@ const getIconClass = (language: string) => {
   }
 };
 
-interface iUserData {
-  id: string;
-  login: string;
-  name: string;
-  bio: string;
-  company: string;
-  location: string;
-  email: string;
-  websiteUrl: string;
-  twitterUsername: string;
-  avatarUrl: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface iUserStats {
+interface iStats {
   id: number;
   labelname: string;
   count: string | number;
@@ -70,43 +74,13 @@ const CardsComponent = () => {
   const [fetchState, setFetchState] = useState<string>("Before");
 
   // State to hold the array of card items
-  const [userData, setUserData] = useState<iUserData[]>([
-    {
-      id: "",
-      name: "",
-      bio: "",
-      avatarUrl: "",
-      company: "",
-      createdAt: "",
-      email: "",
-      location: "",
-      login: "",
-      twitterUsername: "",
-      updatedAt: "",
-      websiteUrl: "",
-    },
-  ]);
+  const [userData, setUserData] = useState<iGitHubUserInfo[]>([]);
 
-  const [userStats, setUserStats] = useState<iUserStats[]>([
-    { id: 1, labelname: "Followers", count: 0, icon: <Activity /> },
-    { id: 2, labelname: "Following", count: 0, icon: <Flame /> },
-    { id: 3, labelname: "Since", count: 0, icon: <Calendar /> },
-    { id: 4, labelname: "Last Active", count: 0, icon: <Calendar /> },
-  ]);
+  const [userStats, setUserStats] = useState<iStats[]>([]);
 
-  const [userStatsDetailed, setUserStatsDetailed] = useState<iUserStats[]>([
-    { id: 1, labelname: "Total Repository", count: 0, icon: <Users /> },
-    { id: 2, labelname: "Total Commits", count: 0, icon: <GitCommit /> },
-    {
-      id: 3,
-      labelname: "Total PRs",
-      count: 0,
-      icon: <GitPullRequest />,
-    },
-    { id: 4, labelname: "Total Issue", count: 0, icon: <AlertCircle /> },
-    { id: 5, labelname: "Starred Repos", count: 0, icon: <Star /> },
-    { id: 6, labelname: "Watching", count: 0, icon: <Users /> },
-  ]);
+  const [userDetStats, setUserDetStats] = useState<iStats[]>([]);
+
+  const [repoStats, setRepoStatsDetailed] = useState<iStats[]>([]);
 
   useEffect(() => {}, []);
 
@@ -115,92 +89,140 @@ const CardsComponent = () => {
       const result = await fetchGitHubDetails(username);
 
       if (result) {
-        const userStatsDetailed: iUserStats[] = [
+        const userDetails = result.userDetails;
+        const userStatistics = result.userStatistics;
+
+        const updatedUserData: iGitHubUserInfo[] = [
           {
-            id: 1,
-            labelname: "Total Repository",
-            icon: <FaStar />,
-            count: result.repositories,
-          },
-          {
-            id: 2,
-            labelname: "Total Commits",
-            icon: <FaCodeBranch />,
-            count: result.commitComments.toString(),
-          },
-          {
-            id: 3,
-            labelname: "Total PRs",
-            icon: <FaExclamationCircle />,
-            count: result.pullRequests.toString(),
-          },
-          {
-            id: 4,
-            labelname: "Total Issue",
-            icon: <FaExclamationCircle />,
-            count: result.issues.toString(),
-          },
-          {
-            id: 5,
-            labelname: "Starred Repos",
-            icon: <FaExclamationCircle />,
-            count: result.starredRepositories.toString(),
-          },
-          {
-            id: 6,
-            labelname: "Watching",
-            icon: <FaExclamationCircle />,
-            count: result.watching.toString(),
+            id: userDetails.id,
+            login: userDetails.login,
+            name: userDetails.name,
+            bio: userDetails.bio,
+            avatarUrl: userDetails.avatarUrl,
+            company: "Novac Technology Solutions",
+            location: userDetails.location,
+            email: "prasanna.r@email.com",
+            websiteUrl: "https://pr-dev-portfolio.netlify.app/",
+            twitterUsername: "twitterUsername",
+            isBountyHunter: true,
+            isCampusExpert: true,
+            isDeveloperProgramMember: true,
+            isEmployee: true,
+            isHireable: true,
+            isSiteAdmin: true,
+            isViewer: true,
           },
         ];
 
-        const updatedUserData: iUserData[] = [
-          {
-            id: result.id,
-            login: result.login,
-            name: result.name,
-            bio: result.bio,
-            avatarUrl: result.avatarUrl,
-            company: result.company,
-            location: result.location,
-            email: result.email,
-            websiteUrl: result.websiteUrl,
-            twitterUsername: result.twitterUsername,
-            createdAt: result.createdAt,
-            updatedAt: result.updatedAt,
-          },
-        ];
-
-        const updatedatedUserStats: iUserStats[] = [
+        const updatedUserStats: iStats[] = [
           {
             id: 1,
             labelname: "Followers",
-            count: result.followers,
+            count: userStatistics.followers,
             icon: <Activity className="w-5 h-5" />,
           },
           {
             id: 2,
             labelname: "Following",
-            count: result.following,
+            count: userStatistics.following,
             icon: <Flame className="w-5 h-5" />,
           },
           {
             id: 3,
             labelname: "Since",
-            count: result.createdAt,
+            count: userStatistics.createdAt,
             icon: <Calendar className="w-5 h-5" />,
           },
           {
             id: 3,
             labelname: "Last Active",
-            count: result.updatedAt,
+            count: userStatistics.updatedAt,
             icon: <Calendar className="w-5 h-5" />,
           },
         ];
 
+        const updatedUserDetStats: iStats[] = [
+          {
+            id: 1,
+            labelname: "Bounty Hunter",
+            count: userDetails.isBountyHunter ? "Yes" : "No",
+            icon: <ShieldCheck className="w-6 h-6" />, // Shield icon for Bounty Hunter
+          },
+          {
+            id: 2,
+            labelname: "Campus Expert",
+            count: userDetails.isCampusExpert ? "Yes" : "No",
+            icon: <GraduationCap className="w-6 h-6" />, // Graduation cap for Campus Expert
+          },
+          {
+            id: 3,
+            labelname: "Dev. Program",
+            count: userDetails.isDeveloperProgramMember ? "Yes" : "No",
+            icon: <Code className="w-6 h-6" />, // Code icon for Developer Program
+          },
+          {
+            id: 4,
+            labelname: "Employee",
+            count: userDetails.isEmployee ? "Yes" : "No",
+            icon: <Briefcase className="w-6 h-6" />, // Briefcase icon for Employee
+          },
+          {
+            id: 5,
+            labelname: "Hireable",
+            count: userDetails.isHireable ? "Yes" : "No",
+            icon: <UserCheck className="w-6 h-6" />, // UserCheck icon for Hireable
+          },
+          {
+            id: 6,
+            labelname: "Site Admin",
+            count: userDetails.isSiteAdmin ? "Yes" : "No",
+            icon: <Lock className="w-6 h-6" />, // Lock icon for Site Admin
+          },
+        ];
+
+        const updatedRepoStatus: iStats[] = [
+          {
+            id: 1,
+            labelname: "Total Repository",
+            icon: <FaBook />, // Book icon to represent repositories
+            count: userStatistics.repositories,
+          },
+          {
+            id: 2,
+            labelname: "Total Commits",
+            icon: <GitCommit />, // Code icon to represent commits
+            count: userStatistics.commitComments.toString(),
+          },
+          {
+            id: 3,
+            labelname: "Total PRs",
+            icon: <FaCodeBranch />, // Branch icon to represent PRs
+            count: userStatistics.pullRequests.toString(),
+          },
+          {
+            id: 4,
+            labelname: "Total Issues",
+            icon: <AlertCircle />, // Bug icon to represent issues
+            count: userStatistics.issues.toString(),
+          },
+          {
+            id: 5,
+            labelname: "Starred Repos",
+            icon: <Star />, // Star icon for starred repositories
+            count: userStatistics.starredRepositories.toString(),
+          },
+          {
+            id: 6,
+            labelname: "Watching",
+            icon: <FaEye />, // Eye icon to represent "Watching"
+            count: userStatistics.watching.toString(),
+          },
+        ];
+
         setUserData(updatedUserData);
-        setUserStats(updatedatedUserStats);
-        setUserStatsDetailed(userStatsDetailed);
+        setUserStats(updatedUserStats);
+        setUserDetStats(updatedUserDetStats);
+        setRepoStatsDetailed(updatedRepoStatus);
         setFetchState("After");
       }
     } catch (error: any) {
@@ -219,14 +241,13 @@ const CardsComponent = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-extrabold text-center mb-8 tracking-wide text-gray-200">
+      {/* Heading */}
+      <h1 className="text-4xl w font-extrabold text-center mb-8 tracking-wide text-gray-200">
         GitHub <span className="text-purple">User Statistics</span> Dashboard
       </h1>
       {error && <ErrorComponent message={error} onRetry={handleSearch} />}
       {fetchState === "Before" ? (
         <div>
-          {/* Heading */}
-
           {/* Input and Search Button */}
           <div className="mb-8 flex justify-center items-center">
             <input
@@ -245,20 +266,25 @@ const CardsComponent = () => {
           </div>
         </div>
       ) : (
+        // Response Container
         <>
-          <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg max-w-4xl mx-auto">
+          <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg mx-auto">
             {userData && userData[0].name !== "" && (
-              <Header userData={userData} userStats={userStats} />
+              <Header
+                userData={userData}
+                userStats={userStats}
+                userDetStats={userDetStats}
+              />
             )}
             <div className="mt-8">
               <h2 className="text-2xl font-bold mb-4 text-violet-400">
                 GitHub Stats
               </h2>
               <div className="grid grid-cols-2 gap-4 mb-6">
-                {userStatsDetailed.map((stat, index) => (
+                {repoStats.map((stat, index) => (
                   <StatItem
                     key={index}
-                    icon={<Star className="w-5 h-5" />}
+                    icon={stat.icon}
                     label={stat.labelname}
                     value={stat.count}
                   />
@@ -275,68 +301,128 @@ const CardsComponent = () => {
 function Header({
   userData,
   userStats,
+  userDetStats,
 }: {
-  userData: iUserData[];
-  userStats: iUserStats[];
+  userData: iGitHubUserInfo[];
+  userStats: iStats[];
+  userDetStats: iStats[];
 }) {
-  console.log(userData);
   return (
-    <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-      {/* avatar image */}
-      <div className="flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-fuchsia-400"
-        >
-          <Image
-            src={userData[0].avatarUrl}
-            alt={userData[0].name}
-            layout="fill"
-            objectFit="cover"
-          />
-        </motion.div>
-        <div className="text-sm font-semibold text-gray-300 mt-2 text-center">
-          @{userData[0].login}
+    <div className="grid grid-cols-1 xl:grid-cols-7 gap-4 px-3 py-3">
+      <div className="col-span-1">
+        {/* avatar image */}
+        <div className="flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-fuchsia-400"
+          >
+            <Image
+              src={userData[0].avatarUrl}
+              alt={userData[0].name}
+              layout="fill"
+              objectFit="cover"
+            />
+          </motion.div>
+          <div className="text-sm font-semibold text-gray-500 mt-2 text-center">
+            @{userData[0].login}
+          </div>
+          <div className="flex items-center space-x-5 mt-3">
+            <a
+              href={`mailto:${userData[0].email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm hover:underline"
+            >
+              <FaEnvelope className="text-gray-400" fontSize={20} />
+            </a>
+            <a
+              href={userData[0].websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm hover:underline"
+            >
+              {" "}
+              <FaGlobe className="text-gray-400" fontSize={20} />
+            </a>
+            <a
+              href={`https://twitter.com/${userData[0].twitterUsername}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm hover:underline"
+            >
+              {" "}
+              <FaTwitter className="text-blue-400" fontSize={20} />
+            </a>
+          </div>
         </div>
       </div>
-      {/* header details */}
-      <div className="flex-1">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl font-bold mb-2 bg-gradient-to-r from-fuchsia-300 to-blue-500 text-transparent bg-clip-text"
-        >
+      <div className="col-span-3">
+        {/* header details */}
+        <div className="flex flex-col justify-evenly">
           <div className="flex items-center">
-            {userData[0].name}
-            <div className="text-sm font-semibold text-gray-600 ml-3">
-              #{userData[0].id}
-            </div>
+            <motion.h1
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl font-bold mb-2 bg-gradient-to-r from-fuchsia-300 to-blue-500 text-transparent bg-clip-text"
+            >
+              {userData[0].name}
+              <span className="text-sm font-semibold text-gray-600 ml-3">
+                #{userData[0].id}
+              </span>
+            </motion.h1>
           </div>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-gray-300 mb-4"
-        >
-          {userData[0].bio}
-        </motion.p>
-        <div>{userData[0].company}</div>
-        <div>{userData[0].email}</div>
-        <div>{userData[0].location}</div>
-        <div>{userData[0].websiteUrl}</div>
-        <div>{userData[0].twitterUsername}</div>
-        {/* stats */}
-        <div className="flex space-x-4">
-          {userStats.map((stat) => (
-            <InfoCard
-              icon={stat.icon}
-              label={stat.labelname}
-              value={stat.count}
-            />
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-gray-300 mb-4"
+            >
+              {userData[0].bio}
+              {/* icon and value - in smaller text */}
+              <div className="flex items-center space-x-2 mt-1">
+                <FaMapMarkerAlt className="text-gray-400" />
+                <span className="text-sm text-gray-400">
+                  {userData[0].location}
+                </span>
+              </div>
+            </motion.p>
+          </div>
+          <div className="flex space-x-4">
+            {userStats.map((stat) => (
+              <InfoCard
+                key={stat.id}
+                icon={stat.icon}
+                label={stat.labelname}
+                value={stat.count}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="col-span-3">
+        <div className="flex flex-row gap-2 flex-wrap">
+          {userDetStats.map((stat) => (
+            <div
+              key={stat.id}
+              className={`rounded-md flex items-center py-2 px-2.5 
+              border border-transparent text-sm transition-all bg-gray-800 shadow-sm w-auto space-x-2`}
+            >
+              {stat.icon}
+              <span className="text-sm text-gray-500 pr-2">
+                {stat.labelname}
+              </span>
+              <div
+                className={`block h-2 w-2 rounded-full ${
+                  stat.count === "Yes"
+                    ? "bg-green-800 shadow-glow-green"
+                    : "bg-red-800 shadow-glow-red"
+                }`}
+              ></div>
+            </div>
           ))}
         </div>
       </div>
@@ -403,7 +489,7 @@ function ContributionCard({
   sublabel,
   color,
 }: {
-  icon: React.ReactNode;
+  icon: React.ReactNode | JSX.Element;
   label: string;
   value: number;
   sublabel: string;
