@@ -18,11 +18,8 @@ This project is a portfolio showcasing my works as a software engineer. It inclu
 - Contact Form
 
 ## Main Packages Used
-- React.js
+- Next JS
+- TypeScript
+- TailwindCSS
 - Express.js
-- MongoDB
-- Bootstrap
 - Redux
-- Axios
-- Jest
-- Enzyme
