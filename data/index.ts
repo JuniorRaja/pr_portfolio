@@ -1,5 +1,29 @@
 import * as logoIdx from "../public/techstack";
 
+export const navMenuItems = [
+  {
+    id: "0",
+    title: "Works",
+    url: "/works",
+  },
+  {
+    id: "1",
+    title: "Gallery",
+    url: "/gallery",
+  },
+  {
+    id: "2",
+    title: "About PR",
+    url: "/about",
+  },
+  {
+    id: "3",
+    title: "Contact",
+    url: "/contact",
+    onlyMobile: false,
+  },
+];
+
 export const gridItems = [
   {
     id: 1,

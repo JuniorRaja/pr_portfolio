@@ -121,7 +121,7 @@ const About = () => {
             </p>
             <p className="text-muted-foreground">
               As a full-stack developer and passionate traveler, I bring a
-              unique perspective to every project. Let's build something
+              unique perspective to every project. Let&apos;s build something
               extraordinary together.
             </p>
           </div>
