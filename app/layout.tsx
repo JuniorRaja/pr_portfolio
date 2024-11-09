@@ -8,6 +8,8 @@ import PRLogoW from "../public/PRLogoW.png";
 import PRLogoB from "../public/PRLogoB.png";
 import ReactReduxProvider from "@/store/ReduxProvider";
 import { fetchNavbarItems } from "../lib/fetchNavbarItems";
+import { navMenuItems } from "@/data";
+
 const customFont = Raleway({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -26,7 +28,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navItems = await fetchNavbarItems();
+  //const navItems = await fetchNavbarItems();
+  const navItems = navMenuItems;
 
   return (
     <html lang="en">

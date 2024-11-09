@@ -5,25 +5,79 @@ import { fetchAlbumsList } from "../../lib/fetchAlbumsList";
 import { AlbumItem } from "@/types/types";
 import SectionHeader from "@/components/layout/SectionHeader";
 
+import doorsImg from "@/public/gallery/thumbnails/tnail_doors.jpeg";
+import macroImg from "@/public/gallery/thumbnails/tnail_macro.jpeg";
+import minimalImg from "@/public/gallery/thumbnails/tnail_minimal.jpg";
+import natureImg from "@/public/gallery/thumbnails/tnail_nature.jpg";
+import patternsImg from "@/public/gallery/thumbnails/tnail_patterns.jpg";
+
 const Gallery = () => {
-  const [albums, setAlbums] = useState<AlbumItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [albums, setAlbums] = useState<AlbumItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    async function getAlbums() {
-      try {
-        setLoading(true);
-        const data = await fetchAlbumsList();
-        setAlbums(data);
-      } catch (error) {
-        console.log("Failed to fetch albums");
-      } finally {
-        setLoading(false);
-      }
-    }
+  const albums: AlbumItem[] = [
+    {
+      id: 1,
+      name: "Doors & Windows",
+      likes: 0,
+      views: 0,
+      img: doorsImg.src,
+      route: "doors",
+      des: "Unique doors and windows from around the world.",
+    },
+    {
+      id: 2,
+      name: "Macro",
+      likes: 0,
+      views: 0,
+      img: macroImg.src,
+      route: "macro",
+      des: "Get closer to the world around you.",
+    },
+    {
+      id: 3,
+      name: "Minimal",
+      likes: 0,
+      views: 0,
+      img: minimalImg.src,
+      route: "minimal",
+      des: "Less is the new more",
+    },
+    {
+      id: 4,
+      name: "Nature",
+      likes: 0,
+      views: 0,
+      img: natureImg.src,
+      route: "nature",
+      des: "Indeed the most beautiful mother nature",
+    },
+    {
+      id: 5,
+      name: "Patterns",
+      likes: 0,
+      views: 0,
+      img: patternsImg.src,
+      route: "patterns",
+      des: "They are everywhere, just look around",
+    },
+  ];
 
-    getAlbums();
-  }, []);
+  // useEffect(() => {
+  //   async function getAlbums() {
+  //     try {
+  //       setLoading(true);
+  //       const data = await fetchAlbumsList();
+  //       setAlbums(data);
+  //     } catch (error) {
+  //       console.log("Failed to fetch albums");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+
+  //   getAlbums();
+  // }, []);
 
   return (
     <div className="max-w-7xl w-full">

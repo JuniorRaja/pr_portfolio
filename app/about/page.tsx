@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Image from "next/image";
-import AIAvatar from "@/public/AIAvatar-4.png";
+import AIAvatar from "@/public/AIAvatar-5.png";
 import { FlipWords } from "@/components/ui/flip-words";
 import { socialMedia, techStack, words, interests } from "@/data";
 import ShimmerButton from "@/components/ui/ShimmerButton";
@@ -99,7 +99,7 @@ const About = () => {
                 height={100}
                 width={100}
                 alt="Banner Photo"
-                className="w-[13rem] h-[13rem] md:w-[20rem] md:h-[20rem] rounded-full object-fill"
+                className="w-[10rem] h-[13rem] md:w-[17rem] md:h-[20rem] rounded-full object-fill"
               />
             </div>
           </div>

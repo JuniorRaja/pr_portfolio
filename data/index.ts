@@ -2,22 +2,25 @@ import * as logoIdx from "../public/techstack";
 
 export const navMenuItems = [
   {
-    id: "0",
-    title: "Works",
-    url: "/works",
-  },
-  {
-    id: "1",
-    title: "Gallery",
-    url: "/gallery",
-  },
-  {
-    id: "2",
+    id: 0,
     title: "About PR",
     url: "/about",
+    onlyMobile: false,
   },
   {
-    id: "3",
+    id: 1,
+    title: "Works",
+    url: "/works",
+    onlyMobile: false,
+  },
+  {
+    id: 2,
+    title: "Gallery",
+    url: "/gallery",
+    onlyMobile: false,
+  },
+  {
+    id: 3,
     title: "Contact",
     url: "/contact",
     onlyMobile: false,
