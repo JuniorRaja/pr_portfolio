@@ -37,8 +37,8 @@ const Works = () => {
 
   return (
     <div className="max-w-7xl w-full">
-      <ScrollBeam>
-        <section className="w-full py-20 min-h-screen mt-5 md:pt-36">
+      <section className="w-full py-20 min-h-screen mt-5 md:pt-36">
+        <ScrollBeam>
           <SectionHeader
             words={["My", "Works"]}
             tagline="Projects | Skills | Career"
@@ -127,8 +127,8 @@ const Works = () => {
           <p className="text-center text-muted-foreground mb-8 text-white">
             Since my graduation I have been working in a FinTech Company
             involved in a core Non-Banking Financial Solution product. Here, I
-            began from zero and now I am leading the product development team
-            and learning new things everyday.
+            began from zero and now I am leading one of the product development
+            team and learning new things everyday.
           </p>
           <div className="text-center mb-12">
             <p className="font-sans text-4xl font-extrabold mb-2">
@@ -209,8 +209,8 @@ const Works = () => {
             <br />
             <JsonFormatter />
           </div>
-        </section>
-      </ScrollBeam>
+        </ScrollBeam>
+      </section>
     </div>
   );
 };

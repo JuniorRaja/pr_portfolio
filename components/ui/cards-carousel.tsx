@@ -180,7 +180,7 @@ export const Card = ({
 
   const handleClose = () => {
     setOpen(false);
-    onCardClose(index);
+    onCardClose(index - 1);
   };
 
   return (

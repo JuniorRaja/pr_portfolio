@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Image from "next/image";
-import AIAvatar from "@/public/AIAvatar-5.png";
+import AIAvatar from "@/public/AIAvatar-4.png";
 import { FlipWords } from "@/components/ui/flip-words";
 import { socialMedia, techStack, words, interests } from "@/data";
 import ShimmerButton from "@/components/ui/ShimmerButton";
@@ -48,7 +48,7 @@ const About = () => {
     <div className="max-w-7xl w-full">
       <section className="w-full py-20 min-h-screen mt-5 md:pt-36">
         {/* Header Div */}
-        <SectionHeader words={["About", "PR"]} tagline="Greeting to you" />
+        <SectionHeader words={["About", "PR"]} tagline="Greetings to you" />
         {/* body div */}
         <div className="h-auto flex  flex-col-reverse md:flex-row items-center justify-between mx-2 ">
           <div className="md:mr-4 md:w-[50%]">
@@ -99,7 +99,7 @@ const About = () => {
                 height={100}
                 width={100}
                 alt="Banner Photo"
-                className="w-[10rem] h-[13rem] md:w-[17rem] md:h-[20rem] rounded-full object-fill"
+                className="w-[10rem] h-[10rem] md:w-[17rem] md:h-[18rem] rounded-full object-fill"
               />
             </div>
           </div>
