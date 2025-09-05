@@ -49,10 +49,10 @@ const Hero = () => {
             Hi, welcome to PR Verse
           </p>
 
-          {/* <TextGenerateEffect
+          <TextGenerateEffect
             className="text-center text-[40px] md:text-6xl lg:text-7xl"
             words="Passion Beyond Responsibilities"
-          /> */}
+          />
           <p className="text-center uppercase md:-tracking-tighter mb-4 text-sm md:text-lg lg:text-2xl text-blue-100 ">
             Manager by day. Developer by Heart
           </p>
@@ -61,15 +61,15 @@ const Hero = () => {
             <div className="text-lg mx-auto font-normal text-center justify-center text-blue-100 dark:text-blue-100">
               <div className="flex flex-col md:flex-row">
                 <div>Hi, I&apos;m Prasanna Rajedran. I am a</div>
-                {/* <div className="text-center">
+                <div className="text-center">
                   <FlipWords words={words} />
-                </div> */}
+                </div>
               </div>
-              {/* <div className="sm:text-justify text-center">
+              <div className="sm:text-justify text-center">
                 from Chennai, India. I build robust web applications, make
                 managemental decisions and take photos of incredible patterns &
                 landscapes..
-              </div> */}
+              </div>
             </div>
           </div>
 

@@ -84,17 +84,17 @@ export const gridItems = [
     spareImg: "",
     href: "/gallery",
   },
-  // {
-  //   id: 2,
-  //   title: "Places I have been to. My travel diaries",
-  //   description: "Travel & Explore",
-  //   className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-  //   imgClassName: "",
-  //   titleClassName: "justify-start",
-  //   img: "",
-  //   spareImg: "",
-  //   href: "/about#travel",
-  // },
+  {
+    id: 2,
+    title: "Places I have been to. My travel diaries",
+    description: "Travel & Explore",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "",
+    titleClassName: "justify-start",
+    img: "",
+    spareImg: "",
+    href: "/about#travel",
+  },
 ];
 
 export const projects = [
